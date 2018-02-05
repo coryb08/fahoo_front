@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import uuid from "uuid";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+
+
 export class SearchForm extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,7 @@ export class SearchForm extends Component {
   };
 
   render() {
-    console.log("props ", this.props);
+
     return (
       <div>
         <input
