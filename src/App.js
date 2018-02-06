@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
 import "./App.css";
-
 import reducer from "./reducers";
 import * as actions from "./actions";
 import { connect } from "react-redux";
@@ -15,6 +13,7 @@ import Body from "./Body";
 
 export class App extends Component {
   componentDidMount = () => {
+    console.log("app mounted");
     this.props.actions.fetchArticles();
   };
 

@@ -14,6 +14,7 @@ const searchSubmit = (state = "", action) => {
 };
 
 const articles = (state = [], action) => {
+  console.log("in reducer ", action);
   switch (action.type) {
     case "ARTICLES":
       return action.payload;

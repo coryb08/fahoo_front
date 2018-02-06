@@ -6,23 +6,21 @@ import { connect } from "react-redux";
 // import Logo from "../../images/CNN-logo.jpg";
 
 const MainArticle = props => {
-  let fourArticles = props.articlesArray
-    .filter(arti => arti.urlToImage !== null)
-    .slice(1, 5)
-    .map((article, i) => (
-      <div key={i} className="fourSubArticleCard">
-        <img src={article.urlToImage} />
-        <h4>{article.title}</h4>
-      </div>
-    ));
-  return <div className="fourSubArticlesDiv">{fourArticles}</div>;
+  console.log("main ", props);
+  return (
+    <div className="mainArticleDiv">
+      <img className="mainArticleImage" src={props.article.urlToImage} />
+      <h1>{props.article.title}</h1>
+    </div>
+  );
 };
 
-function mapStateToProps(state) {
-  return {
-    articlesArray: state.articles,
-    searchInput: state.searchSubmit.payload
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//     articlesArray: state.articles,
+//     searchInput: state.searchSubmit.payload
+//   };
+// }
 
-export default connect(mapStateToProps, {})(MainArticle);
+// export default connect(mapStateToProps, {})(MainArticle);
+export default MainArticle;

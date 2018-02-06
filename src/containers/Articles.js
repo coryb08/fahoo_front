@@ -7,22 +7,22 @@ import FourSubArticles from "../components/FourSubArticles";
 import MainArticle from "../components/MainArticle";
 
 const Articles = props => {
-  let mainArticle = props.articlesArray[0];
-
-  let fourArticles = props.articlesArray.slice(1, 5).map((article, i) => (
-    <div className="filteredSearchCard" key={i}>
-      {article.title}
-    </div>
-  ));
+  // let mainArticle = nullCheck[0];
+  // let fourArticles = nullCheck[(1, 5)];
   return (
     <div className="defaultArticlesDiv">
-      <p>ooooook</p>
-      <FourSubArticles articles={fourArticles} />
+      <MainArticle
+        article={props.articlesArray[0] ? props.articlesArray[0] : []}
+      />
+      <FourSubArticles
+        articles={props.articlesArray[1] ? props.articlesArray.slice(1, 5) : []}
+      />
     </div>
   );
 };
 
 function mapStateToProps(state) {
+  console.log("in state ", state);
   return {
     articlesArray: state.articles,
     searchInput: state.searchSubmit.payload

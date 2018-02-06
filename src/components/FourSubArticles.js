@@ -1,20 +1,19 @@
 import React from "react";
 import * as actions from "../actions";
 import { connect } from "react-redux";
+import "../App.css";
 
 // import SearchForm from "../containers/SearchForm";
 // import Logo from "../../images/CNN-logo.jpg";
 
 const FourSubArticles = props => {
-  let fourArticles = props.articlesArray
-    .filter(arti => arti.urlToImage !== null)
-    .slice(1, 5)
-    .map((article, i) => (
-      <div key={i} className="fourSubArticleCard">
-        <img src={article.urlToImage} />
-        <h4>{article.title}</h4>
-      </div>
-    ));
+  const fourArticles = props.articles.map(arti => (
+    <div className="fourArticlesCard">
+      <img className="fourSubImage" src={arti.urlToImage} />
+
+      <h4>{arti.title}</h4>
+    </div>
+  ));
   return <div className="fourSubArticlesDiv">{fourArticles}</div>;
 };
 

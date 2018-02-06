@@ -14,7 +14,8 @@ const SearchResults = props => {
     )
     .map((filteredArticle, i) => (
       <div className="filteredSearchCard" key={i}>
-        {filteredArticle.title}
+        <img className="filteredSearchImage" src={filteredArticle.urlToImage} />
+        <h3>{filteredArticle.title}</h3>
       </div>
     ));
   return <div className="filteredSearchDiv">{articles}</div>;

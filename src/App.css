@@ -1,3 +1,45 @@
 * {
   font-family: "Heebo", sans-serif;
 }
+
+.fourSubArticlesDiv {
+  background-color: lightgrey;
+  width: 300px;
+  border: 25px solid green;
+  padding: 25px;
+  margin: 25px;
+}
+
+.fourSubImage {
+  max-height: 10em;
+}
+
+.fourSubImageCard {
+}
+
+.mainArticleDiv {
+  background-color: lightgrey;
+  width: 700px;
+  border: 25px solid blue;
+  padding: 25px;
+  margin: 25px;
+}
+
+.mainArticleImage {
+  max-height: 20em;
+}
+
+.filteredSearchDiv {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid gray;
+  padding: 25px;
+  margin: 25px;
+}
+
+.filteredSearchImage {
+  max-height: 10em;
+}
+
+.filteredSearchCard {
+}
