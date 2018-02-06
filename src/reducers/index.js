@@ -1,12 +1,15 @@
 import { combineReducers } from "redux";
 
+const defaultState = { payload: "", bool: false };
+
 const searchSubmit = (state = "", action) => {
   switch (action.type) {
     case "SEARCH":
-      return action.payload;
+      console.log("state ", state);
+      return { payload: action.payload, bool: action.bool };
 
     default:
-      return state;
+      return defaultState;
   }
 };
 

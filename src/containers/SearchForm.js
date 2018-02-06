@@ -4,50 +4,38 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 
 export class SearchForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchValue: ""
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     searchValue: ""
+  //   };
+  // }
 
-  handleOnChange = event => {
-    event.preventDefault();
-    this.setState({
-      searchValue: event.target.value
-    });
-  };
+  // handleOnChange = event => {
+  //   this.setState({
+  //     searchValue: event.target.value
+  //   });
+  // };
 
   handleOnSubmit = event => {
-    // Handle Form Submit event default
-    // Create quote object from state
-    // Pass quote object to action creator
-    // Update component state to return to default state
+    event.preventDefault();
+    if (event.target[0].value.trim === "") {
+      return;
+    } else this.props.search(event.target[0].value);
   };
 
   render() {
     return (
-      <div>
-        <input
-          onChange={this.handleOnChange}
-          type="text"
-          placeholder="inside searchForm"
-        />
-        <button
-          onClick={() => this.props.search(this.state.searchValue)}
-          type="submit"
-        >
-          Search
-        </button>
-      </div>
+      <form onSubmit={this.handleOnSubmit}>
+        <input type="text" placeholder="find news" />
+        <button type="submit">Search</button>
+      </form>
     );
   }
 }
 
-// function mapStateToProps(state) {
-//   return{
-//
-//   }
-// }
+function mapStateToProps(state) {
+  return { state };
+}
 
-export default connect(null, actions)(SearchForm);
+export default connect(mapStateToProps, actions)(SearchForm);

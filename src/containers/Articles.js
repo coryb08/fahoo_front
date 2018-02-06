@@ -3,31 +3,29 @@ import React from "react";
 import { store } from "../store.js";
 import * as actions from "../actions";
 import { connect } from "react-redux";
+import FourSubArticles from "../components/FourSubArticles";
+import MainArticle from "../components/MainArticle";
 
 const Articles = props => {
-  console.log("props ", props);
-  let articles = props.articlesArray
-    .filter(
-      article =>
-        article.title.toLowerCase().includes(props.searchInput.toLowerCase()) ||
-        (article.description !== null &&
-          article.description
-            .toLowerCase()
-            .includes(props.searchInput.toLowerCase()))
-    )
-    .map((filteredArticle, i) => <li key={i}>{filteredArticle.title}</li>);
+  let mainArticle = props.articlesArray[0];
+
+  let fourArticles = props.articlesArray.slice(1, 5).map((article, i) => (
+    <div className="filteredSearchCard" key={i}>
+      {article.title}
+    </div>
+  ));
   return (
-    <div>
-      <ul>{articles}</ul>
+    <div className="defaultArticlesDiv">
+      <p>ooooook</p>
+      <FourSubArticles articles={fourArticles} />
     </div>
   );
-  // return <div>hello</div>;
 };
 
 function mapStateToProps(state) {
   return {
     articlesArray: state.articles,
-    searchInput: state.searchSubmit
+    searchInput: state.searchSubmit.payload
   };
 }
 
