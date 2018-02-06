@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SearchForm from "./containers/SearchForm";
-import Articles from "./components/Articles";
+import Articles from "./containers/Articles";
 import "./App.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
@@ -8,27 +8,15 @@ import reducer from "./reducers";
 import * as actions from "./actions";
 import { connect } from "react-redux";
 import { store } from "./store.js";
+import { bindActionCreators } from "redux";
 // import "../assets/css/bootstrap.min.css";
 // import "../assets/css/jquery.bxslider.css";
 // import "../assets/css/responsive.css";
 // import "../assets/css/style.css";
 
 export class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      articles: []
-    }
-
-  }
   componentDidMount = () => {
-    fetch(
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=3f9e3c8d8e1646bbb2e9afa8979b0335"
-    )
-      .then(res => res.json())
-      .then(json => this.props.articles(this.state.articles))
-
-
+    this.props.actions.fetchArticles();
   };
 
   render() {
@@ -42,6 +30,14 @@ export class App extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    state: state
+  };
+}
 
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actions, dispatch) };
+}
 
-export default connect(null, actions)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
