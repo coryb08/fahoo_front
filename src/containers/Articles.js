@@ -24,8 +24,8 @@ const Articles = props => {
 function mapStateToProps(state) {
   console.log("in state ", state);
   return {
-    articlesArray: state.articles,
-    searchInput: state.searchSubmit.payload
+    articlesArray: state.articles.payload,
+    searchInput: state.searchTerm
   };
 }
 

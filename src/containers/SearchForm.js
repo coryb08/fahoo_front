@@ -19,9 +19,7 @@ export class SearchForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    if (event.target[0].value.trim === "") {
-      return;
-    } else this.props.search(event.target[0].value);
+    this.props.fetchArticles(event.target[0].value);
   };
 
   render() {
@@ -35,7 +33,8 @@ export class SearchForm extends Component {
 }
 
 function mapStateToProps(state) {
-  return { state };
+  console.log("sf ", state);
+  return state;
 }
 
 export default connect(mapStateToProps, actions)(SearchForm);

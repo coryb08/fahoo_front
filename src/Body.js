@@ -7,9 +7,20 @@ import Navbar from "./components/Navbar";
 import * as actions from "./actions";
 import { connect } from "react-redux";
 import SearchResults from "./components/SearchResults";
+import { bindActionCreators } from "redux";
+
+// function componentDidMount() {
+//   console.log("app mounted");
+//   this.props.actions.fetchArticles();
+// }
+//
+// componentDidMount();
 
 const Body = props => {
-  if (props.state.searchSubmit.payload !== "") {
+  console.log(";alksdjf ", props);
+
+  if (props.state.articles.searchTerm !== "") {
+    console.log("HIIIIIIIIII");
     return (
       <div className="body_wrapper">
         <Header />
@@ -33,5 +44,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, actions)(Body);
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actions, dispatch) };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Body);
 // export default Body;

@@ -16,15 +16,15 @@ const FourSubArticles = props => {
   ));
   return <div className="fourSubArticlesDiv">{fourArticles}</div>;
 };
+//
+// function mapStateToProps(state) {
+//   return {
+//     articlesArray: state.articles,
+//     searchInput: state.searchSubmit.payload
+//   };
+// }
 
-function mapStateToProps(state) {
-  return {
-    articlesArray: state.articles,
-    searchInput: state.searchSubmit.payload
-  };
-}
-
-export default connect(mapStateToProps, {})(FourSubArticles);
+export default FourSubArticles;
 
 // const FourSubArticles = props => {
 //   return (

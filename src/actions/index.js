@@ -1,37 +1,48 @@
 import fetch from "isomorphic-fetch";
 
-// let nullCheck = props.articlesArray.filter(
-//   arti => arti.urlToImage !== null && arti.description !== null
-// );
-
 let boole = false;
 
-export const search = searchTerm => {
-  if (searchTerm === "") {
-    boole = false;
-  } else {
-    boole = true;
-  }
+export function fetchArticles(searchTerm = "") {
+  const NewsAPI = require("newsapi");
+  const newsapi = new NewsAPI("3f9e3c8d8e1646bbb2e9afa8979b0335");
 
-  return { type: "SEARCH", payload: searchTerm, bool: boole };
-};
-
-export function fetchArticles() {
+  let link =
+    "https://newsapi.org/v2/top-headlines?country=us&apiKey=3f9e3c8d8e1646bbb2e9afa8979b0335";
   return function(dispatch) {
-    return fetch(
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=3f9e3c8d8e1646bbb2e9afa8979b0335"
-    )
-      .then(res => res.json())
+    if (searchTerm === "") {
+      return fetch(link)
+        .then(res => res.json())
 
-      .then(responseJson => {
-        let nullCheck = responseJson.articles.filter(
-          arti => arti.urlToImage !== null && arti.description !== null
-        );
-        dispatch({
-          type: "ARTICLES",
-          payload: nullCheck
+        .then(responseJson => {
+          let nullCheck = responseJson.articles.filter(
+            arti => arti.urlToImage !== null && arti.description !== null
+          );
+          dispatch({
+            type: "ARTICLES",
+            payload: nullCheck,
+            bool: boole,
+            concat: ""
+          });
         });
-      });
-    // return cats;
+    } else {
+      return newsapi.v2
+        .everything({
+          q: searchTerm,
+          language: "en",
+          sortBy: "relevancy",
+          pageSize: 20
+        })
+        .then(responseJson => {
+          let nullCheck = responseJson.articles.filter(
+            arti => arti.urlToImage !== null && arti.description !== null
+          );
+          dispatch({
+            type: "ARTICLES",
+            payload: nullCheck,
+            bool: boole,
+            concat: searchTerm
+          });
+        });
+    }
   };
 }
