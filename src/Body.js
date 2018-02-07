@@ -17,10 +17,7 @@ import { bindActionCreators } from "redux";
 // componentDidMount();
 
 const Body = props => {
-  console.log(";alksdjf ", props);
-
   if (props.state.articles.searchTerm !== "") {
-    console.log("HIIIIIIIIII");
     return (
       <div className="body_wrapper">
         <Header />

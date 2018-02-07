@@ -33,7 +33,6 @@ export class SearchForm extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log("sf ", state);
   return state;
 }
 

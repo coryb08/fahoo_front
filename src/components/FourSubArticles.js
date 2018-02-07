@@ -9,9 +9,10 @@ import "../App.css";
 const FourSubArticles = props => {
   const fourArticles = props.articles.map(arti => (
     <div className="fourArticlesCard">
-      <img className="fourSubImage" src={arti.urlToImage} />
-
-      <h4>{arti.title}</h4>
+      <a href={arti.url} target="_blank">
+        <img className="fourSubImage" src={arti.urlToImage} />
+        <h4>{arti.title}</h4>
+      </a>
     </div>
   ));
   return <div className="fourSubArticlesDiv">{fourArticles}</div>;

@@ -2,10 +2,53 @@
   font-family: "Heebo", sans-serif;
 }
 
+body {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1em 1em;
+}
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.body_wrapper {
+  display: grid;
+}
+
+.header {
+}
+
+.defaultArticlesDiv {
+}
+
+.weatherWidget {
+}
+
 .fourSubArticlesDiv {
   background-color: lightgrey;
   width: 300px;
-  border: 25px solid green;
+  border: 5px solid green;
   padding: 25px;
   margin: 25px;
 }
@@ -20,7 +63,7 @@
 .mainArticleDiv {
   background-color: lightgrey;
   width: 700px;
-  border: 25px solid blue;
+  border: 5px solid blue;
   padding: 25px;
   margin: 25px;
 }
@@ -32,7 +75,7 @@
 .filteredSearchDiv {
   background-color: lightgrey;
   width: 300px;
-  border: 15px solid gray;
+  border: 5px solid gray;
   padding: 25px;
   margin: 25px;
 }

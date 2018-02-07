@@ -3,7 +3,7 @@ import SearchForm from "../containers/SearchForm";
 import Logo from "../../images/CNN-logo.jpg";
 
 const Header = props => (
-  <div>
+  <div className="header">
     <SearchForm />
   </div>
 );

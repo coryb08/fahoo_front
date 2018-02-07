@@ -13,7 +13,6 @@ import Body from "./Body";
 
 export class App extends Component {
   componentDidMount = () => {
-    console.log("app mounted");
     this.props.actions.fetchArticles();
   };
 
@@ -22,14 +21,8 @@ export class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    state: state
-  };
-}
-
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

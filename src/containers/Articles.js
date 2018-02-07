@@ -5,10 +5,10 @@ import * as actions from "../actions";
 import { connect } from "react-redux";
 import FourSubArticles from "../components/FourSubArticles";
 import MainArticle from "../components/MainArticle";
+import RemainingArticles from "../components/RemainingArticles";
+import WeatherWidget from "../components/WeatherWidget";
 
 const Articles = props => {
-  // let mainArticle = nullCheck[0];
-  // let fourArticles = nullCheck[(1, 5)];
   return (
     <div className="defaultArticlesDiv">
       <MainArticle
@@ -17,12 +17,17 @@ const Articles = props => {
       <FourSubArticles
         articles={props.articlesArray[1] ? props.articlesArray.slice(1, 5) : []}
       />
+      <WeatherWidget />
+      <RemainingArticles
+        articlesArray={
+          props.articlesArray[1] ? props.articlesArray.slice(5, -1) : [2]
+        }
+      />
     </div>
   );
 };
 
 function mapStateToProps(state) {
-  console.log("in state ", state);
   return {
     articlesArray: state.articles.payload,
     searchInput: state.searchTerm

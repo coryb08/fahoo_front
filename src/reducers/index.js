@@ -11,6 +11,7 @@ let concat;
 const articles = (state = [], action) => {
   switch (action.type) {
     case "ARTICLES":
+      console.log(action.payload);
       return {
         payload: action.payload,
         searchTerm: action.concat,
