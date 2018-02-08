@@ -32,10 +32,12 @@ a:active {
   text-decoration: underline;
 }
 
-.container {
-  background-color: green;
-  grid-template-columns: auto 25%;
-  grid-template-rows: 20vh 50vh 30vh;
+
+
+.container{
+  background-color: #944743;
+  grid-template-columns: 10% auto 25% 18%;
+  grid-template-rows: 10vh 70vh 20vh;
   grid-gap: 3px;
   min-width: 100vw;
   display: grid;
@@ -44,23 +46,29 @@ a:active {
 }
 
 .imageLogo {
+  grid-column-start: 1;
+  grid-column-end: 2;
   height: 100%;
   width: 100%;
 }
 
 .header {
-  grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
   display: grid;
-  grid-template-columns: 20% auto 40%;
+  grid-template-columns: 30% auto;
   grid-template-rows: 100%;
 }
 
 .searchInput {
-  width: 80%;
   height: 100%;
+  width: 80%;
+  font-size: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 2px;
 }
 
 .mainLogo {
@@ -70,33 +78,73 @@ a:active {
   grid-row-end: 2;
 }
 
-.searchFormDiv {
+
+
+.searchSubmit {
+  height: 100%;
+  position: absolute;
+  width: 18%;
+}
+
+.searchForm {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
-.searchSubmit {
-  height: 20vh;
-}
-
-.searchForm {
-  height: 92%;
-
-  max-height: 100%;
-}
-
 .defaultArticlesDiv {
+  display: grid;
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65% 35%;
 }
 
 .weatherWidget {
 }
 
+.fourArticlesCard0 {
+  position: absolute;
+  width: 25%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+}
+.fourArticlesCard1 {
+position: absolute;
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+}
+.fourArticlesCard2 {
+position: absolute;
+  grid-column-start: 3;
+  grid-column-end: 4;
+
+}
+.fourArticlesCard3 {
+position: absolute;
+  grid-column-start: 4;
+  grid-column-end: 5;
+
+}
+
 .fourSubArticlesDiv {
+/* position: absolute; */
+
   background-color: lightgrey;
-  width: 300px;
-  border: 5px solid green;
-  padding: 25px;
-  margin: 25px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+
+
 }
 
 .fourSubImage {
@@ -104,15 +152,30 @@ a:active {
 }
 
 .mainArticleDiv {
-  background-color: lightgrey;
-  width: 700px;
-  border: 5px solid blue;
-  padding: 25px;
-  margin: 25px;
+
+  display: grid;
+  background-color: #ECDB54;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-template-columns: auto;
+  grid-template-rows: 65% 35%;
+
+}
+.mainAriticleTitle{
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .mainArticleImage {
-  max-height: 20em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 100%;
+  width: 100%;
+
 }
 
 .fourArticlesCard {

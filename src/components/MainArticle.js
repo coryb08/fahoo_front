@@ -10,7 +10,7 @@ const MainArticle = props => {
     <div className="mainArticleDiv">
       <a href={props.article.url} target="_blank">
         <img className="mainArticleImage" src={props.article.urlToImage} />
-        <h1>{props.article.title}</h1>
+        <h1 className="mainArticleTitle">{props.article.title}</h1>
       </a>
     </div>
   );
