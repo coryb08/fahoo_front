@@ -1,32 +1,14 @@
-import fetch from "isomorphic-fetch";
+import fetch from "isomorphic-fetch"
 
-let boole = false;
+let boole = false
+var checkImage = require("image-check")
 
 export function fetchArticles(searchTerm = "") {
-  function imageChecker(json) {
-    let newArr = [];
-    function filterFunc(res) {}
-    var checkImage = require("image-check");
-    for (var i = 0; i < json.length; i++) {
-      let arti = json[i];
-
-      checkImage(arti.urlToImage)
-        .then(data => {
-          const width = data.width;
-          const height = data.height;
-          const url = data.url;
-          newArr.push(arti);
-        })
-        .catch(err => {});
-    }
-    console.log("newArr ", newArr);
-    return newArr;
-  }
-  const NewsAPI = require("newsapi");
-  const newsapi = new NewsAPI("3f9e3c8d8e1646bbb2e9afa8979b0335");
+  const NewsAPI = require("newsapi")
+  const newsapi = new NewsAPI("3f9e3c8d8e1646bbb2e9afa8979b0335")
 
   let link =
-    "https://newsapi.org/v2/top-headlines?country=us&apiKey=3f9e3c8d8e1646bbb2e9afa8979b0335";
+    "https://newsapi.org/v2/top-headlines?country=us&apiKey=3f9e3c8d8e1646bbb2e9afa8979b0335"
   return function(dispatch) {
     if (searchTerm === "") {
       return fetch(link)
@@ -35,14 +17,14 @@ export function fetchArticles(searchTerm = "") {
         .then(responseJson => {
           let nullCheck = responseJson.articles.filter(
             arti => arti.urlToImage !== null
-          );
+          )
           dispatch({
             type: "ARTICLES",
             payload: nullCheck,
             bool: boole,
             concat: ""
-          });
-        });
+          })
+        })
     } else {
       return newsapi.v2
         .everything({
@@ -52,21 +34,24 @@ export function fetchArticles(searchTerm = "") {
           pageSize: 20
         })
         .then(responseJson => {
-          // console.log("res ", responseJson);
-          // debugger;
-          // let filtered = imageChecker(responseJson);
-          // let results = await Promise.all()
-          let nullCheck = responseJson.articles.filter(
-            arti => arti.urlToImage !== null
-          );
-
-          dispatch({
-            type: "ARTICLES",
-            payload: nullCheck,
-            bool: boole,
-            concat: searchTerm
-          });
-        });
+          let validArticles = responseJson.articles
+            .filter(art => art.urlToImage !== null)
+            .map(arti => {
+              return checkImage(arti.urlToImage)
+                .then(data => arti)
+                .catch(err => {})
+            })
+          Promise.all(validArticles)
+            .then(articles => articles.filter(article => !!article))
+            .then(filteredArticles =>
+              dispatch({
+                type: "ARTICLES",
+                payload: filteredArticles,
+                bool: boole,
+                concat: searchTerm
+              })
+            )
+        })
     }
-  };
+  }
 }
