@@ -17,7 +17,11 @@ export class App extends Component {
   };
 
   render() {
-    return <Body />;
+    return (
+      <div className="container">
+        <Body />
+      </div>
+    );
   }
 }
 

@@ -5,7 +5,7 @@
 body {
   margin: 0 auto;
   max-width: 100%;
-  padding: 1em 1em;
+  max-height: 100%;
 }
 
 a:link {
@@ -32,11 +32,57 @@ a:active {
   text-decoration: underline;
 }
 
-.body_wrapper {
+.container {
+  background-color: green;
+  grid-template-columns: auto 25%;
+  grid-template-rows: 20vh 50vh 30vh;
+  grid-gap: 3px;
+  min-width: 100vw;
   display: grid;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.imageLogo {
+  height: 100%;
+  width: 100%;
 }
 
 .header {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: grid;
+  grid-template-columns: 20% auto 40%;
+  grid-template-rows: 100%;
+}
+
+.searchInput {
+  width: 80%;
+  height: 100%;
+}
+
+.mainLogo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.searchFormDiv {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.searchSubmit {
+  height: 20vh;
+}
+
+.searchForm {
+  height: 92%;
+
+  max-height: 100%;
 }
 
 .defaultArticlesDiv {
@@ -57,9 +103,6 @@ a:active {
   max-height: 10em;
 }
 
-.fourSubImageCard {
-}
-
 .mainArticleDiv {
   background-color: lightgrey;
   width: 700px;
@@ -70,6 +113,10 @@ a:active {
 
 .mainArticleImage {
   max-height: 20em;
+}
+
+.fourArticlesCard {
+  overflow: auto;
 }
 
 .filteredSearchDiv {

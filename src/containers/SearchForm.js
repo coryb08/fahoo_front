@@ -24,10 +24,14 @@ export class SearchForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleOnSubmit}>
-        <input type="text" placeholder="find news" />
-        <button type="submit">Search</button>
-      </form>
+      <div className="searchFormDiv">
+        <form className="searchForm" onSubmit={this.handleOnSubmit}>
+          <input className="searchInput" type="text" placeholder="find news" />
+          <button className="searchSubmit" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
     );
   }
 }

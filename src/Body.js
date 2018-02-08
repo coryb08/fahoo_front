@@ -26,12 +26,7 @@ const Body = props => {
       </div>
     );
   } else {
-    return (
-      <div className="body_wrapper">
-        <Header />
-        <Articles />
-      </div>
-    );
+    return <Header />;
   }
 };
 
