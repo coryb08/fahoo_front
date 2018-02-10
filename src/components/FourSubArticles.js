@@ -11,7 +11,7 @@ const FourSubArticles = props => {
     <div className={`fourArticlesCard${i}`}>
       <a href={arti.url} target="_blank">
         <img className="fourSubImage" src={arti.urlToImage} />
-        <h4>{arti.title}</h4>
+        <h4 className="fourSubTitle">{arti.title}</h4>
       </a>
     </div>
   ))

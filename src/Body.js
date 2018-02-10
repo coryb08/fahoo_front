@@ -8,7 +8,7 @@ import * as actions from "./actions"
 import { connect } from "react-redux"
 import SearchResults from "./components/SearchResults"
 import { bindActionCreators } from "redux"
-
+import RemainingArticles from "./components/RemainingArticles"
 // function componentDidMount() {
 //   console.log("app mounted");
 //   this.props.actions.fetchArticles();
@@ -21,13 +21,18 @@ const Body = props => {
     return (
       <div className="body_wrapper">
         <Header />
-
         <SearchResults />
-
       </div>
     )
   } else {
-    return <div className="container"><Header /><Articles /></div>
+    return (
+      <div>
+        <div className="container">
+          <Header />
+          <Articles />
+        </div>
+      </div>
+    )
   }
 }
 

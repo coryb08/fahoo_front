@@ -17,8 +17,11 @@ const Articles = props => {
       <FourSubArticles
         articles={props.articlesArray[1] ? props.articlesArray.slice(1, 5) : []}
       />
-
-
+      <RemainingArticles
+        articlesArray={
+          props.articlesArray[1] ? props.articlesArray.slice(5, -1) : []
+        }
+      />
     </div>
   )
 }
@@ -33,9 +36,4 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {})(Articles)
 
-// 
-// <RemainingArticles
-//   articlesArray={
-//     props.articlesArray[1] ? props.articlesArray.slice(5, -1) : [2]
-//   }
-// />
+//

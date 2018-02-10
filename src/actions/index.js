@@ -4,12 +4,6 @@ let boole = false
 var checkImage = require("image-check")
 
 export function fetchArticles(searchTerm = "") {
-  function imageChecker(json) {
-    let newArr = []
-    function filterFunc(res) {}
-    // console.log("newArr ", newArr)
-    return newArr
-  }
   const NewsAPI = require("newsapi")
   const newsapi = new NewsAPI("3f9e3c8d8e1646bbb2e9afa8979b0335")
 
@@ -37,46 +31,27 @@ export function fetchArticles(searchTerm = "") {
           q: searchTerm,
           language: "en",
           sortBy: "relevancy",
-          pageSize: 20
+          pageSize: 30
         })
         .then(responseJson => {
-          // console.log("res ", responseJson);
-          // debugger;
-          // let filtered = imageChecker(responseJson);
-          // let results = await Promise.all()
-          let validArticles = []
-          for (var i = 0; i < responseJson.articles.length; i++) {
-            let arti = responseJson.articles[i]
-
-            checkImage(arti.urlToImage)
-              .then(data => {
-                const width = data.width
-                const height = data.height
-                const url = data.url
-                return arti
+          let validArticles = responseJson.articles
+            .filter(art => art.urlToImage !== null && art.description !== null)
+            .map(arti => {
+              return checkImage(arti.urlToImage)
+                .then(data => arti)
+                .catch(err => {})
+            })
+          Promise.all(validArticles)
+            .then(articles => articles.filter(article => !!article))
+            .then(filteredArticles =>
+              dispatch({
+                type: "ARTICLES",
+                payload: filteredArticles,
+                bool: boole,
+                concat: searchTerm
               })
-              .catch(err => {})
-              .then(art => {
-                if (art) validArticles.push(art)
-                dispatch({
-                  type: "ARTICLES",
-                  payload: validArticles,
-                  bool: boole,
-                  concat: searchTerm
-                })
-              })
-          }
-          // return validArticles
+            )
         })
-      // .then(validArticles => {
-      //   debugger
-      //   dispatch({
-      //     type: "ARTICLES",
-      //     payload: validArticles,
-      //     bool: boole,
-      //     concat: searchTerm
-      //   })
-      // })
     }
   }
 }

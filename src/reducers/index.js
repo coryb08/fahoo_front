@@ -13,7 +13,7 @@ const articles = (state = defaultState, action) => {
     case "ARTICLES":
       console.log(action.payload.length)
       return {
-        payload: [],
+        payload: action.payload,
         searchTerm: action.concat,
         bool: action.bool
       }

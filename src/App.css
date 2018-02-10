@@ -6,6 +6,23 @@ body {
   margin: 0 auto;
   max-width: 100%;
   max-height: 100%;
+  width: 200vw;
+  /* height: 200vw; */
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 80%;
+  display: inline;
+  padding-bottom: 3px;
+  line-height: 1.3;
+}
+
+h1:hover {
+  /* line-height: 1.3;
+  font-size: 24;
+  border-bottom: solid 2px #000;
+  display: inline; */
 }
 
 a:link {
@@ -23,27 +40,33 @@ a:visited {
 a:hover {
   color: black;
   background-color: transparent;
-  text-decoration: underline;
 }
 
 a:active {
   color: black;
   background-color: transparent;
-  text-decoration: underline;
 }
 
-
-
-.container{
-  background-color: #944743;
-  grid-template-columns: 10% auto 25% 18%;
-  grid-template-rows: 10vh 70vh 20vh;
+.container {
+  grid-template-columns: 17% 47% auto 17%;
+  grid-template-rows: 5vw 35vw 60vw;
   grid-gap: 3px;
-  min-width: 100vw;
   display: grid;
   margin: 0 auto;
-  overflow: auto;
+  position: relative;
+  /* height: 100%; */
+  /* width: 100vh; */
 }
+
+/* .containerBottom {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 17% 47% auto 17%;
+  grid-template-rows: auto;
+  margin: 0 auto;
+  padding-bottom: 1%;
+  padding-top: 1%;
+} */
 
 .imageLogo {
   grid-column-start: 1;
@@ -53,6 +76,7 @@ a:active {
 }
 
 .header {
+  margin-top: 10%;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -65,7 +89,7 @@ a:active {
 .searchInput {
   height: 100%;
   width: 80%;
-  font-size: 100%;
+  font-size: 1.1vw;
   margin-top: 0;
   margin-bottom: 0;
   letter-spacing: 2px;
@@ -77,8 +101,6 @@ a:active {
   grid-row-start: 1;
   grid-row-end: 2;
 }
-
-
 
 .searchSubmit {
   height: 100%;
@@ -96,86 +118,186 @@ a:active {
 
 .defaultArticlesDiv {
   display: grid;
-
+  overflow: hidden;
+  grid-gap: 3px;
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-template-columns: 1fr;
-  grid-template-rows: 65% 35%;
+  grid-template-rows: 65% 35% auto;
 }
 
 .weatherWidget {
 }
 
 .fourArticlesCard0 {
-  position: absolute;
-  width: 25%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
   grid-column-start: 1;
   grid-column-end: 2;
-
 }
 .fourArticlesCard1 {
-position: absolute;
+  display: grid;
   grid-column-start: 2;
   grid-column-end: 3;
-
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
 }
 .fourArticlesCard2 {
-position: absolute;
+  display: grid;
   grid-column-start: 3;
   grid-column-end: 4;
-
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
 }
 .fourArticlesCard3 {
-position: absolute;
+  display: grid;
   grid-column-start: 4;
   grid-column-end: 5;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+}
 
+.fourSubTitle {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  vertical-align: text-top;
 }
 
 .fourSubArticlesDiv {
-/* position: absolute; */
-
-  background-color: lightgrey;
+  top: 5%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-gap: 1%;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-
-
-
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100%;
 }
 
 .fourSubImage {
-  max-height: 10em;
+  height: 100%;
+  width: 100%;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .mainArticleDiv {
-
+  overflow: hidden;
+  margin-top: 2%;
+  margin-bottom: -2%;
   display: grid;
-  background-color: #ECDB54;
+  position: relative;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-  grid-template-columns: auto;
-  grid-template-rows: 65% 35%;
-
-}
-.mainAriticleTitle{
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-template-columns: 60% 2% 36% 2%;
+  grid-template-rows: auto auto 15%;
 }
 
-.mainArticleImage {
-  grid-column-start: 1;
-  grid-column-end: 2;
+.mask {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 4;
+  position: absolute;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.mainTitleGrid {
+  position: absolute;
+  grid-column-start: 3 !important;
+  grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
   height: 100%;
   width: 100%;
+  left: 0;
+}
 
+.mainArticleTitle {
+  overflow: hidden;
+  font-size: 1.5vw;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  vertical-align: center;
+  line-height: 150%;
+  position: absolute;
+  grid-column-start: 3 !important;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: inline;
+}
+
+.mainArticleTitle:hover {
+  text-decoration: underline;
+}
+
+.mainArticleDescription {
+  font-size: 1vw;
+  font-weight: 100;
+  letter-spacing: 1px;
+  overflow: hidden;
+  color: white;
+  z-index: 9999;
+  height: 100%;
+  width: 90%;
+  left: 0;
+  vertical-align: center;
+  line-height: 130%;
+  position: absolute;
+  grid-column-start: 3 !important;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  top: 0;
+  bottom: 0;
+  display: inline;
+}
+
+.mainArticleImage {
+  position: absolute;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  height: 100%;
+  width: 100%;
+}
+
+.mainArticleImageBlur {
+  opacity: 0.5;
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  -webkit-transform: scaleX(-1);
+  -webkit-filter: blur(30px);
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  width: 100%;
+  height: 100%;
 }
 
 .fourArticlesCard {
@@ -183,7 +305,6 @@ position: absolute;
 }
 
 .filteredSearchDiv {
-  background-color: lightgrey;
   width: 300px;
   border: 5px solid gray;
   padding: 25px;
@@ -196,4 +317,47 @@ position: absolute;
 
 .filteredSearchCard {
   overflow: auto;
+}
+
+.RAdiv {
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-start: 4;
+  top: 0;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  grid-gap: 1%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.RAcard {
+  position: absolute;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+  height: 12vh;
+  padding: 1%;
+}
+
+.RAimage {
+  height: 100%;
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.RAtitle {
+  position: absolute;
+  font-size: 100%;
+  margin-top: 0;
+  vertical-align: center;
+  left: 2%;
+  right: 2%;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
