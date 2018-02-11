@@ -13,11 +13,12 @@ const RemainingArticles = props => {
         <a href={art.url} target="_blank">
           <img className="RAimage" src={art.urlToImage} />
           <h4 className="RAtitle">{art.title}</h4>
+          <p className="RAdescription">{art.description}</p>
         </a>
       </div>
     )
   })
-  return <div className="RAdiv">hello</div>
+  return <div className="RAdiv">{artMap}</div>
 }
 // function mapStateToProps(state) {
 //   return {
