@@ -10,7 +10,10 @@ const FourSubArticles = props => {
   const fourArticles = props.articles.map((arti, i) => (
     <div className={`fourArticlesCard${i}`}>
       <a href={arti.url} target="_blank">
-        <img className="fourSubImage" src={arti.urlToImage} />
+        <div
+          style={{ backgroundImage: `url(${arti.urlToImage})` }}
+          className="fourSubImage"
+        />
         <h4 className="fourSubTitle">{arti.title}</h4>
       </a>
     </div>

@@ -9,7 +9,10 @@ const MainArticle = props => {
   return (
     <div className="mainArticleDiv">
       <a target="_blank" href={props.article.url}>
-        <img className="mainArticleImage" src={props.article.urlToImage} />
+        <div
+          className="mainArticleImage"
+          style={{ backgroundImage: `url(${props.article.urlToImage})` }}
+        />
         <div className="mainTitleGrid">
           <h1 className="mainArticleTitle">{props.article.title}</h1>
         </div>
