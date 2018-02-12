@@ -12,12 +12,11 @@ export class SearchForm extends Component {
   render() {
     return (
       <div className="searchFormDiv">
+        <form onSubmit={this.handleOnSubmit}>
+          <input className="searchInput" type="text" placeholder="find news" />
 
-        <input className="searchInput" type="text" placeholder="find news" />
-
-        <button className="searchSubmit" type="submit" onSubmit={this.handleOnSubmit}>
-        </button>
-
+          <button className="searchSubmit" type="submit" />
+        </form>
       </div>
     )
   }
