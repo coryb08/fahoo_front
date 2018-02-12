@@ -16,7 +16,7 @@ export function fetchArticles(searchTerm = "") {
 
         .then(responseJson => {
           let nullCheck = responseJson.articles.filter(
-            arti => arti.urlToImage !== null
+            arti => arti.urlToImage !== null && arti.description !== null
           )
           dispatch({
             type: "ARTICLES",

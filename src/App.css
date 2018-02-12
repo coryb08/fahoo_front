@@ -1,5 +1,7 @@
 * {
   font-family: "Heebo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
 }
 
 body {
@@ -47,13 +49,14 @@ a:active {
 }
 
 .container {
+  padding-top: 0.3vw;
   grid-template-columns: 17% 47% auto 17%;
-  grid-template-rows: 5vw 35vw 60vw;
-  grid-gap: 3px;
+  grid-template-rows: 5vw 35vw 100%;
+  grid-gap: 1vw;
   display: grid;
-  margin: 0 auto;
   position: relative;
-  /* height: 100%; */
+
+  height: 100%;
   /* width: 100vh; */
 }
 
@@ -72,10 +75,12 @@ a:active {
   grid-column-end: 2;
   height: 100%;
   width: 100%;
+  cursor: pointer;
+  padding-right: 10px
 }
 
 .header {
-  margin-top: 10%;
+  position: relative;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -83,15 +88,48 @@ a:active {
   display: grid;
   grid-template-columns: 30% auto;
   grid-template-rows: 100%;
+  height: 80%;
+  padding-top: 1%;
+}
+
+.searchFormDiv {
+  height: 5vw;
+  display: grid;
+  position: absolute;
+  width: 100%;
+  /* overflow: hidden; */
+  grid-template-columns: 80% 20%;
+  grid-template-rows: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding-left: 2vw;
+  margin-top: 1%
+}
+
+.searchForm {
+  height: 5vw;
+  display: grid;
+  position: absolute;
+  width: 100%;
+  /* overflow: hidden; */
+  grid-template-columns: 80% 20%;
+  grid-template-rows: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding-left: 2vw;
+  margin-top: 1%
 }
 
 .searchInput {
-  height: 100%;
-  width: 80%;
+  height: 95%;
   font-size: 1.1vw;
-  margin-top: 0;
-  margin-bottom: 0;
+  top: 0;
+  grid-column-start: 1;
+  grid-column-end: 2;
   letter-spacing: 2px;
+  border:1px solid gray;
+  padding-left: 10px;
+
 }
 
 .mainLogo {
@@ -99,44 +137,55 @@ a:active {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
+  height: 100%;
+  margin-right: 10%
 }
 
 .searchSubmit {
-  background-image: url("/Users/corybaker/desktop/flatiron-projects/yoohoo_frontend/images/Screen.png");
-  height: 100%;
-  background-color: transparent;
+  top: 0;
+  background-image: url("../images/Screen.png");
+  background-position: center;
+  background-color: #0064FE;
   background-repeat: no-repeat;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
   position: absolute;
-  width: 18%;
+  height: 100%;
+  width: 100%;
+
+  cursor: pointer;
+  grid-column-start: 2;
+  grid-column-end: 3;
   background-size: cover;
+  outline:none;
+	padding:0;
+  border:0px solid transparent;
+}
+
+.searchSubmit:active {
+  border:1px solid white;
 }
 
 .searchButton {
   position: absolute;
   grid-column-start: 1;
   grid-column-end: 2;
-  height: 100%;
+  height: 3vw;
   width: 20%;
 }
 
-.searchForm {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
+
 
 .defaultArticlesDiv {
   display: grid;
   overflow: hidden;
-  grid-gap: 3px;
+
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-template-columns: 1fr;
-  grid-template-rows: 65% 35% auto;
+  grid-template-rows: 65% 35%;
 }
 
 .weatherWidget {
@@ -173,14 +222,15 @@ a:active {
 
 .fourSubTitle {
   grid-row-start: 2;
-  font-weight: 600;
-  font-size: 0.9vw;
+  font-weight: 400;
+  font-size: 0.8vw;
   grid-row-end: 3;
-  vertical-align: text-top;
+
+
 }
 
 .fourSubArticlesDiv {
-  top: 5%;
+  top: 1vw;
   position: relative;
   overflow: hidden;
   display: grid;
@@ -202,8 +252,7 @@ a:active {
 
 .mainArticleDiv {
   overflow: hidden;
-  margin-top: 2%;
-  margin-bottom: -2%;
+
   display: grid;
   position: relative;
   grid-column-start: 1;
@@ -317,12 +366,7 @@ a:active {
   overflow: auto;
 }
 
-.filteredSearchDiv {
-  width: 300px;
-  border: 5px solid gray;
-  padding: 25px;
-  margin: 25px;
-}
+
 
 .filteredSearchImage {
   max-height: 10em;
@@ -341,11 +385,11 @@ a:active {
   top: 1%;
   left: 0%;
   grid-template-columns: 100%;
-  grid-template-rows: auto;
-  grid-auto-rows: auto;
+  /* grid-template-rows: auto; */
+  /* grid-auto-rows: auto; */
   grid-gap: 1%;
   position: absolute;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .RAcard {
@@ -355,8 +399,8 @@ a:active {
   grid-template-columns: 30% 70%;
   grid-template-rows: 40% 60%;
   height: 7.5vw;
-  padding-top: 8%;
-  padding-bottom: 8%;
+  padding-top: 2%;
+  padding-bottom: 10%;
 }
 
 .RAdescription {
@@ -365,7 +409,7 @@ a:active {
   margin-top: 0;
   left: 2%;
   top: 12%;
-  font-size: 1vw;
+  font-size: 0.9vw;
   height: 100%;
   letter-spacing: 1px;
   line-height: 120%;
@@ -391,6 +435,7 @@ a:active {
   left: 2%;
   right: 2%;
   top: 0;
+  color: #020e65;
   bottom: 0;
   height: 100%;
   letter-spacing: 0;
@@ -399,4 +444,102 @@ a:active {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
+}
+
+.RAtitle:hover {
+
+  color: #324fe1
+}
+
+.filteredSearchDiv {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: -1;
+  display: grid;
+  position: absolute;
+  grid-template-columns: 100%;
+  /* grid-template-rows: auto; */
+  /* grid-auto-rows: auto; */
+  grid-gap: 1vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.filteredSearchCard {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 26% 84%;
+  grid-template-rows: 3vw 1vw 5vw;
+  width: 100%;
+  height: 100%;
+
+  /* height: 100%; */
+/*
+  border-top:1px solid gray; */
+
+  top: 0;
+  bottom: 0;
+
+}
+
+.filteredSearchDescription {
+  overflow: hidden;
+  position: absolute;
+  margin-top: 0;
+  left: 2%;
+
+  top: 0;
+  bottom: 23%;
+  font-size: 1vw;
+  height: 100%;
+  letter-spacing: 1px;
+  line-height: 120%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  width: 80%;
+  font-size: 0.9vw;
+  padding-bottom: 4%;
+
+}
+
+.filteredSearchImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4 !important;
+  top: 0;
+  bottom: 0;
+
+
+}
+
+
+
+.filteredSearchTitle {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  overflow: hidden;
+width: 80%;
+  position: absolute;
+
+  left: 2%;
+  right: 2%;
+  top: 0;
+  padding-top: 0;
+
+  bottom: 0;
+  height: 100%;
+  letter-spacing: 0;
+  font-size: 1vw;
+  font-weight: 700 !important;
+
 }

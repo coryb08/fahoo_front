@@ -19,7 +19,7 @@ import RemainingArticles from "./components/RemainingArticles"
 const Body = props => {
   if (props.state.articles.searchTerm !== "") {
     return (
-      <div className="body_wrapper">
+      <div className="container">
         <Header />
         <SearchResults />
       </div>

@@ -8,7 +8,8 @@ const SearchResults = props => {
     <div className="filteredSearchCard" key={filteredArticle.url}>
       <a href={filteredArticle.url} target="_blank">
         <img className="filteredSearchImage" src={filteredArticle.urlToImage} />
-        <h3>{filteredArticle.title}</h3>
+        <h3 className="filteredSearchTitle">{filteredArticle.title}</h3>
+        <p className="filteredSearchDescription">{filteredArticle.description}</p>
       </a>
     </div>
   ))

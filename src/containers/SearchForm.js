@@ -11,13 +11,14 @@ export class SearchForm extends Component {
 
   render() {
     return (
-      <form className="searchForm" onSubmit={this.handleOnSubmit}>
+      <div className="searchFormDiv">
+
         <input className="searchInput" type="text" placeholder="find news" />
 
-        <button className="searchSubmit" type="submit">
-          Search
+        <button className="searchSubmit" type="submit" onSubmit={this.handleOnSubmit}>
         </button>
-      </form>
+
+      </div>
     )
   }
 }
