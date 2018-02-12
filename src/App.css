@@ -1,11 +1,29 @@
 * {
   font-family: "Heebo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
 }
 
 body {
   margin: 0 auto;
   max-width: 100%;
-  padding: 1em 1em;
+  max-height: 100%;
+  width: 200vw;
+  /* height: 200vw; */
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.5vw;
+  display: inline;
+  padding-bottom: 3px;
+}
+
+h1:hover {
+  /* line-height: 1.3;
+  font-size: 24;
+  border-bottom: solid 2px #000;
+  display: inline; */
 }
 
 a:link {
@@ -23,61 +41,347 @@ a:visited {
 a:hover {
   color: black;
   background-color: transparent;
-  text-decoration: underline;
 }
 
 a:active {
   color: black;
   background-color: transparent;
-  text-decoration: underline;
 }
 
-.body_wrapper {
+.container {
+  padding-top: 0.3vw;
+  grid-template-columns: 17% 47% auto 17%;
+  grid-template-rows: 5vw 35vw 100%;
+  grid-gap: 1vw;
   display: grid;
+  position: relative;
+
+  height: 100%;
+  /* width: 100vh; */
+}
+
+/* .containerBottom {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 17% 47% auto 17%;
+  grid-template-rows: auto;
+  margin: 0 auto;
+  padding-bottom: 1%;
+  padding-top: 1%;
+} */
+
+.imageLogo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  cursor: pointer;
+  padding-right: 10px;
+
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 }
 
 .header {
+  position: relative;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 100%;
+  height: 100%;
 }
 
+.searchFormDiv {
+  /* height: 5vw; */
+  display: grid;
+  position: relative;
+  width: 100%;
+  /* overflow: hidden; */
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 100%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  /* padding-left: 2vw; */
+  /* margin-top: 1%; */
+}
+
+.searchForm {
+  height: 5vw;
+  display: grid;
+  position: absolute;
+  width: 100%;
+  /* overflow: hidden; */
+  grid-template-columns: 80% 20%;
+  grid-template-rows: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding-left: 2vw;
+  margin-top: 1%;
+}
+
+.searchInput {
+  height: 100%;
+  font-size: 1.1vw;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  letter-spacing: 2px;
+  border: 1px solid gray;
+  padding-left: 10px;
+}
+
+.mainLogo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 100%;
+  margin-right: 10%;
+}
+
+.searchSubmit {
+  top: 0;
+  background-image: url("../images/Screen.png");
+  background-position: center;
+  background-color: #0064fe;
+  background-repeat: no-repeat;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+  position: absolute;
+  height: calc(100% + 4px);
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-size: cover;
+  outline: none;
+  padding: 0;
+  border: 0px solid transparent;
+}
+
+.searchSubmit:active {
+  border: 1px solid white;
+}
+
+/* .searchButton {
+  position: absolute;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  height: 3vw;
+  width: 20%;
+} */
+
 .defaultArticlesDiv {
+  display: grid;
+  overflow: hidden;
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65% 35%;
 }
 
 .weatherWidget {
 }
 
+.fourArticlesCard0 {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.fourArticlesCard1 {
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+}
+.fourArticlesCard2 {
+  display: grid;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+}
+.fourArticlesCard3 {
+  display: grid;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+}
+
+.fourSubTitle {
+  grid-row-start: 2;
+  font-weight: 400;
+  font-size: 0.8vw;
+  grid-row-end: 3;
+}
+
 .fourSubArticlesDiv {
-  background-color: lightgrey;
-  width: 300px;
-  border: 5px solid green;
-  padding: 25px;
-  margin: 25px;
+  top: 1vw;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-gap: 1%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100%;
 }
 
 .fourSubImage {
-  max-height: 10em;
-}
-
-.fourSubImageCard {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 }
 
 .mainArticleDiv {
-  background-color: lightgrey;
-  width: 700px;
-  border: 5px solid blue;
-  padding: 25px;
-  margin: 25px;
+  overflow: hidden;
+
+  display: grid;
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-template-columns: 60% 2% 36% 2%;
+  grid-template-rows: auto auto 15%;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 4;
+  position: absolute;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.mainTitleGrid {
+  position: absolute;
+  grid-column-start: 3 !important;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+
+.mainArticleTitle {
+  overflow: hidden;
+  font-size: 1.5vw;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  vertical-align: center;
+  line-height: 150%;
+  position: absolute;
+  grid-column-start: 3 !important;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: inline;
+}
+
+.mainArticleTitle:hover {
+  text-decoration: underline;
+}
+
+.mainArticleDescription {
+  font-size: 1vw;
+  font-weight: 100;
+  letter-spacing: 1px;
+  overflow: hidden;
+  color: white;
+  z-index: 9999;
+  height: 100%;
+  width: 90%;
+  left: 0;
+  vertical-align: center;
+  line-height: 130%;
+  position: absolute;
+  grid-column-start: 3 !important;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  top: 0;
+  bottom: 0;
+  display: inline;
 }
 
 .mainArticleImage {
-  max-height: 20em;
+  position: absolute;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 
-.filteredSearchDiv {
-  background-color: lightgrey;
-  width: 300px;
-  border: 5px solid gray;
-  padding: 25px;
-  margin: 25px;
+.mainArticleImageBlur {
+  opacity: 0.5;
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  -webkit-transform: scaleX(-1);
+  -webkit-filter: blur(30px);
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  width: 100%;
+  height: 100%;
+}
+
+.fourArticlesCard {
+  overflow: auto;
 }
 
 .filteredSearchImage {
@@ -86,4 +390,171 @@ a:active {
 
 .filteredSearchCard {
   overflow: auto;
+}
+
+.RAdiv {
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  top: 1%;
+  left: 0%;
+  grid-template-columns: 100%;
+  /* grid-template-rows: auto; */
+  /* grid-auto-rows: auto; */
+  grid-gap: 1%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.RAcard {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 40% 60%;
+  height: 7.5vw;
+  padding-top: 2%;
+  padding-bottom: 10%;
+}
+
+.RAdescription {
+  overflow: hidden;
+  position: absolute;
+  margin-top: 0;
+  left: 2%;
+  top: 12%;
+  font-size: 0.9vw;
+  height: 100%;
+  letter-spacing: 1px;
+  line-height: 120%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.RAimage {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  width: 100%;
+}
+
+.RAtitle {
+  overflow: hidden;
+  position: absolute;
+  margin-top: 0;
+  vertical-align: center;
+  left: 2%;
+  right: 2%;
+  top: 0;
+  color: #020e65;
+  bottom: 0;
+  height: 100%;
+  letter-spacing: 0;
+  font-weight: 700 !important;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.RAtitle:hover {
+  color: #324fe1;
+}
+
+.filteredSearchDiv {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: -1;
+  display: grid;
+  position: absolute;
+  grid-template-columns: 100%;
+  /* grid-template-rows: auto; */
+  /* grid-auto-rows: auto; */
+  grid-gap: 1vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.filteredSearchCard {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 26% 84%;
+  grid-template-rows: 3vw 1vw 5vw;
+  width: 100%;
+  height: 100%;
+
+  /* height: 100%; */
+  /*
+  border-top:1px solid gray; */
+
+  top: 0;
+  bottom: 0;
+}
+
+.filteredSearchDescription {
+  overflow: hidden;
+  position: absolute;
+  margin-top: 0;
+  left: 2%;
+
+  top: 0;
+  bottom: 23%;
+  font-size: 1vw;
+  height: 100%;
+  letter-spacing: 1px;
+  line-height: 120%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  width: 80%;
+  font-size: 0.9vw;
+  padding-bottom: 4%;
+}
+
+.filteredSearchImage {
+  position: absolute;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4 !important;
+  top: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.filteredSearchTitle {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  overflow: hidden;
+  width: 80%;
+  position: absolute;
+
+  left: 2%;
+  right: 2%;
+  top: 0;
+  padding-top: 0;
+
+  bottom: 0;
+  height: 100%;
+  letter-spacing: 0;
+  font-size: 1vw;
+  font-weight: 700 !important;
 }

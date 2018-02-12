@@ -16,7 +16,11 @@ export function fetchArticles(searchTerm = "") {
 
         .then(responseJson => {
           let nullCheck = responseJson.articles.filter(
+<<<<<<< HEAD
             arti => arti.urlToImage !== null
+=======
+            arti => arti.urlToImage !== null && arti.description !== null
+>>>>>>> coryexperiment
           )
           dispatch({
             type: "ARTICLES",
@@ -31,11 +35,15 @@ export function fetchArticles(searchTerm = "") {
           q: searchTerm,
           language: "en",
           sortBy: "relevancy",
-          pageSize: 20
+          pageSize: 30
         })
         .then(responseJson => {
           let validArticles = responseJson.articles
+<<<<<<< HEAD
             .filter(art => art.urlToImage !== null)
+=======
+            .filter(art => art.urlToImage !== null && art.description !== null)
+>>>>>>> coryexperiment
             .map(arti => {
               return checkImage(arti.urlToImage)
                 .then(data => arti)

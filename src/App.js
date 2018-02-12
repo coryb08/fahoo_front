@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./App.css";
-import reducer from "./reducers";
-import * as actions from "./actions";
-import { connect } from "react-redux";
-import { store } from "./store.js";
-import { bindActionCreators } from "redux";
-import Body from "./Body";
+import React, { Component } from "react"
+import "./App.css"
+import reducer from "./reducers"
+import * as actions from "./actions"
+import { connect } from "react-redux"
+import { store } from "./store.js"
+import { bindActionCreators } from "redux"
+import Body from "./Body"
 // import "../assets/css/bootstrap.min.css";
 // import "../assets/css/jquery.bxslider.css";
 // import "../assets/css/responsive.css";
@@ -13,16 +13,21 @@ import Body from "./Body";
 
 export class App extends Component {
   componentDidMount = () => {
-    this.props.actions.fetchArticles();
-  };
+    this.props.actions.fetchArticles()
+  }
 
   render() {
-    return <Body />;
+    return (
+      <div >
+        <Body />
+
+      </div>
+    )
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) };
+  return { actions: bindActionCreators(actions, dispatch) }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App)
