@@ -17,12 +17,7 @@ export class App extends Component {
   }
 
   render() {
-    return (
-      <div >
-        <Body />
-
-      </div>
-    )
+    return <Body />
   }
 }
 
