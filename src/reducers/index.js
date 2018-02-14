@@ -37,7 +37,29 @@ const offClick = (state, action) => {
   }
 }
 
-export default combineReducers({ articles, offClick })
+const users = (state, action) => {
+  switch (action.type) {
+    case "USERSUCCESS":
+      return {
+        ...state,
+        username: action.username,
+        articles: action.articles,
+        status: action.status
+      }
+
+    case "USERERROR":
+      return {
+        ...state,
+        error: action.error,
+        status: action.status
+      }
+
+    default:
+      return { ...state }
+  }
+}
+
+export default combineReducers({ articles, offClick, users })
 
 // import { combineReducers } from "redux"
 //

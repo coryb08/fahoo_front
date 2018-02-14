@@ -10,6 +10,75 @@ export function handleOffClick(bool) {
   }
 }
 
+let defaultPayload = {
+  id: 1,
+  username: "coryb08",
+  password: "123",
+  created_at: "2018-02-12T19:11:43.713Z",
+  updated_at: "2018-02-12T19:11:43.713Z"
+}
+
+export function createUser(argObj) {
+  if (argObj.password !== argObj.passwordMatch) {
+    return alert("Passwords do not match")
+  } else {
+    return function(dispatch) {
+      fetch("http://localhost:3000/users")
+        .then(res => res.json())
+        .then(json => {
+          let duplicate = json.find(user => user.username === argObj.username)
+          if (duplicate !== undefined) {
+            return alert("Username is already taken")
+          } else {
+            return fetch(`http://localhost:3000/users`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                username: argObj.username,
+                password: argObj.password
+              })
+            })
+              .then(res => res.json())
+              .then(json => {
+                return dispatch({
+                  type: "USERSUCCESS",
+                  username: json.username,
+                  articles: json.articles,
+                  status: "good"
+                })
+              })
+          }
+        })
+    }
+  }
+}
+
+export function fetchUser(argObj) {
+  return function(dispatch) {
+    fetch("http://localhost:3000/users")
+      .then(res => res.json())
+      .then(json => {
+        let userCheck = json.find(user => user.username === argObj.username)
+        if (userCheck !== undefined && userCheck.password === argObj.password) {
+          console.log("success")
+          return dispatch({
+            type: "USERSUCCESS",
+            username: userCheck.username,
+            articles: userCheck.articles,
+            status: "good"
+          })
+        } else {
+          alert("Username and/or password is incorrect.")
+          return dispatch({
+            type: "USERERROR",
+            error: "Password is incorrect",
+            status: undefined
+          })
+        }
+      })
+  }
+}
+
 export function fetchArticles(searchTerm = "") {
   const NewsAPI = require("newsapi")
   const newsapi = new NewsAPI("3f9e3c8d8e1646bbb2e9afa8979b0335")
