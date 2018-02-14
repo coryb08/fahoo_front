@@ -6,9 +6,16 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 
 const UserNav = props => {
+  console.log("nav ", props)
+
+  const handleOffClick = event => {
+    return props.handleOffClick(true)
+  }
   return (
     <div className="dropdown">
-      <button className="dropbtn">{props.user.username}</button>
+      <button onClick={handleOffClick} className="dropbtn">
+        {props.user.username ? props.user.username : "Log in / Sign up"}
+      </button>
       <div className="dropdown-content">
         <a href="#">Profile</a>
         <a href="#">Bookmarks</a>
@@ -20,7 +27,7 @@ const UserNav = props => {
 
 function mapStateToProps(state) {
   return {
-    user: state.user.payload[0]
+    user: state
   }
 }
 

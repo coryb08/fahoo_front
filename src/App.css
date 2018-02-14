@@ -69,6 +69,114 @@ a:active {
   /* width: 100vh; */
 }
 
+.signInUpDiv {
+  /* display: none; */
+  position: fixed; /* Stay in place */
+  z-index: 9000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.signInUpContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+
+  grid-template-rows: 0% 42% 6% 47% 2%;
+  background-color: #fefefe;
+  margin: 8% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  height: 30vw;
+  width: 50vw; /* Could be more or less, depending on screen size */
+}
+
+.signInForm {
+  display: grid;
+  grid-template-columns: auto;
+  display: relative;
+
+  grid-template-rows: 20% 30% 30%;
+  grid-column-start: 1;
+  grid-column-start: 2;
+  grid-row-start: 0;
+  grid-row-start: 2;
+}
+
+.signInForm > label {
+  top: 0;
+  bottom: 0;
+  padding-left: 2%;
+  grid-row-start: 0;
+  grid-row-start: 1;
+}
+
+.signInUsername {
+  outline: none;
+  top: 0;
+  bottom: 0;
+  padding-left: 2%;
+  grid-row-start: 1;
+  grid-row-start: 2;
+}
+
+.signInPassword {
+  outline: none;
+  top: 0;
+  bottom: 0;
+  padding-left: 2%;
+  grid-row-start: 2;
+  grid-row-start: 3;
+}
+
+.signUpForm {
+  display: grid;
+  grid-template-columns: auto;
+  display: relative;
+
+  grid-template-rows: 15% 30% 30% 30%;
+  height: 100%;
+  grid-column-start: 1;
+  grid-column-start: 2;
+  grid-row-start: 3;
+  grid-row-start: 4;
+}
+
+.signUpForm > label {
+  top: 0;
+  bottom: 0;
+  padding-left: 2%;
+  grid-row-start: 0;
+  grid-row-start: 1;
+}
+
+.signUpUsername {
+  outline: none;
+  padding-left: 2%;
+  grid-row-start: 1;
+  grid-row-start: 2;
+}
+
+.signUpPassword1 {
+  outline: none;
+  padding-left: 2%;
+  grid-row-start: 2;
+  grid-row-start: 3;
+}
+
+.signUpPassword2 {
+  outline: none;
+  padding-left: 2%;
+  padding-left: 2%;
+  grid-row-start: 3;
+  grid-row-start: 4;
+}
+
 .dropbtn {
   background-color: white;
   color: black;
@@ -90,7 +198,7 @@ a:active {
   /* justify-content: center; */
   height: 100%;
   float: right;
-  z-index: 9999;
+  z-index: 8000;
   display: inline-block;
   grid-column-start: 3;
   grid-column-end: 4;
@@ -103,6 +211,7 @@ a:active {
   font-size: 1.7vw;
   position: absolute;
   width: 100%;
+  z-index: 8000;
   background-color: #f9f9f9;
   /* min-width: 160px; */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -114,11 +223,13 @@ a:active {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  z-index: 8000;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+  z-index: 8000;
 }
 
 /* Show the dropdown menu on hover */
@@ -126,12 +237,14 @@ a:active {
   display: block;
   position: relative;
   display: inline-block;
+  z-index: 8000;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropbtn:hover .dropdown-content {
   background-color: white;
   border: none;
+  z-index: 8000;
   border: 1px solid white;
   display: block;
   position: relative;
@@ -141,9 +254,7 @@ a:active {
 .imageLogo {
   grid-column-start: 1;
   grid-column-end: 2;
-
   cursor: pointer;
-
   background-repeat: no-repeat;
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -384,7 +495,7 @@ a:active {
   font-weight: 600;
   letter-spacing: 2px;
   color: white;
-  z-index: 9998;
+  z-index: 6000;
   height: 100%;
   width: 100%;
   left: 0;
@@ -408,7 +519,7 @@ a:active {
   letter-spacing: 1px;
   overflow: hidden;
   color: white;
-  z-index: 9998;
+  z-index: 6000;
   height: 100%;
   width: 90%;
   left: 0;
