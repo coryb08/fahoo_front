@@ -20,7 +20,7 @@ const MainArticle = props => {
         <div className="mask">
           <img
             className="mainArticleImageBlur"
-            src={props.article.urlToImage}
+            style={{ backgroundImage: `url(${props.article.urlToImage})` }}
           />
         </div>
       </a>

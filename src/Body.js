@@ -3,6 +3,7 @@ import SearchForm from "./containers/SearchForm"
 import Articles from "./containers/Articles"
 import MainArticle from "./components/MainArticle"
 import Header from "./components/Header"
+import SignInUp from "./containers/SignInUp"
 import Navbar from "./components/Navbar"
 import * as actions from "./actions"
 import { connect } from "react-redux"
@@ -17,10 +18,13 @@ import RemainingArticles from "./components/RemainingArticles"
 // componentDidMount();
 
 const Body = props => {
+  console.log("props in body ", props)
   if (props.state.articles.searchTerm !== "") {
     return (
       <div className="container">
+        {props.state.offClick.offClick ? <SignInUp /> : <div />}
         <Header />
+
         <SearchResults />
       </div>
     )
@@ -28,6 +32,7 @@ const Body = props => {
     return (
       <div>
         <div className="container">
+          {props.state.offClick.offClick ? <SignInUp /> : <div />}
           <Header />
           <Articles />
         </div>

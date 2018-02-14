@@ -8,7 +8,7 @@ import "../App.css"
 
 const FourSubArticles = props => {
   const fourArticles = props.articles.map((arti, i) => (
-    <div className={`fourArticlesCard${i}`}>
+    <div className={`fourArticlesCard${i}`} key={arti.url}>
       <a href={arti.url} target="_blank">
         <div
           style={{ backgroundImage: `url(${arti.urlToImage})` }}
