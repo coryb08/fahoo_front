@@ -13,7 +13,7 @@ export class SignInUp extends Component {
   }
   handleInSubmit = event => {
     event.preventDefault()
-    event.preventPropagation()
+    event.stopPropagation()
     if (this.state.username === "" || this.state.password === "") {
       return
     } else {
@@ -26,7 +26,7 @@ export class SignInUp extends Component {
 
   handleUpSubmit = event => {
     event.preventDefault()
-    event.preventPropagation()
+    event.stopPropagation()
     if (
       event.target[0].value === "" ||
       event.target[1].value === "" ||
@@ -54,7 +54,7 @@ export class SignInUp extends Component {
 
   updateForm = event => {
     event.preventDefault()
-
+    event.stopPropagation()
     this.setState({
       [event.target.name]: event.target.value
     })
