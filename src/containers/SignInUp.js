@@ -13,7 +13,7 @@ export class SignInUp extends Component {
   }
   handleInSubmit = event => {
     event.preventDefault()
-
+    event.preventPropagation()
     if (this.state.username === "" || this.state.password === "") {
       return
     } else {
@@ -26,7 +26,7 @@ export class SignInUp extends Component {
 
   handleUpSubmit = event => {
     event.preventDefault()
-
+    event.preventPropagation()
     if (
       event.target[0].value === "" ||
       event.target[1].value === "" ||
