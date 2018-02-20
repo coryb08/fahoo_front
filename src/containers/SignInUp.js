@@ -95,7 +95,7 @@ export class SignInUp extends Component {
                 Sign In
               </button>
             </form>
-            <form onSubmit={() => this.handleUpSubmit()} className="signUpForm">
+            <form onSubmit={this.handleUpSubmit} className="signUpForm">
               <label className="signUpLabel">Sign Up</label>
               <input
                 name="username"
