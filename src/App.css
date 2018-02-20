@@ -319,11 +319,11 @@ a:active {
   cursor: pointer;
   float: right;
   overflow: hidden;
-  /* white-space: nowrap; */
-  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
   content: "";
-  height: auto;
-  min-height: 80%;
+  height: 80%;
+  /* min-height: 80%; */
   width: 90%;
   border-radius: 4%;
   border: 2px solid #2d1450;
@@ -454,11 +454,11 @@ a:active {
   grid-column-start: 1;
   grid-column-end: 2;
   border-style: solid;
-  -webkit-letter-spacing: 2px;
+  -webkit-letter-spacing: 2px !important;
   border: 1px solid lightgray;
   -webkit-border: 1px solid lightgray;
   -moz-border: 1px solid lightgray;
-  padding-left: 10px;
+  padding-left: 10px !important;
   outline: none;
 
   outline: none;
