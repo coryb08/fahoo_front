@@ -6,17 +6,29 @@ import { connect } from "react-redux"
 // import Logo from "../../images/CNN-logo.jpg";
 
 const MainArticle = props => {
+  console.log("INSIDE MAIN ", props)
+  const handleLike = event => {
+    let user1
+    let article1 = props.article
+    if (props.state.users.status !== undefined) {
+      user1 = props.state.users.id
+      return props.handleLike(article1, user1)
+    } else {
+      alert("Please log in or sign up to add article to favorites")
+    }
+  }
+
   return (
     <div className="mainArticleDiv">
+      <div className="mainArticleImageLike" onClick={handleLike} />
       <a target="_blank" href={props.article.url}>
         <div
           className="mainArticleImage"
           style={{ backgroundImage: `url(${props.article.urlToImage})` }}
         />
-        <div className="mainTitleGrid">
-          <h1 className="mainArticleTitle">{props.article.title}</h1>
-        </div>
-        <p className="mainArticleDescription">{props.article.description}</p>
+
+        <div className="mainTitleGrid">{props.article.title}</div>
+        <div className="mainDescriptionGrid">{props.article.description}</div>
         <div className="mask">
           <img
             className="mainArticleImageBlur"
@@ -27,11 +39,10 @@ const MainArticle = props => {
     </div>
   )
 }
-// function mapStateToProps(state) {
-//   return {
-//     articlesArray: state.articles,
-//     searchInput: state.searchSubmit.payload
-//   };
-// }
-// export default connect(mapStateToProps, {})(MainArticle);
-export default MainArticle
+function mapStateToProps(state) {
+  return {
+    state
+  }
+}
+export default connect(mapStateToProps, actions)(MainArticle)
+// export default MainArticle

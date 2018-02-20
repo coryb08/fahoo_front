@@ -10,6 +10,119 @@ export function handleOffClick(bool) {
   }
 }
 
+let defaultPayload = {
+  id: 1,
+  username: "coryb08",
+  password: "123",
+  created_at: "2018-02-12T19:11:43.713Z",
+  updated_at: "2018-02-12T19:11:43.713Z"
+}
+
+// ----------------------------------------------
+
+export function handleFavorites(user, bool = false) {
+  return function(dispatch) {
+    fetch(`http://localhost:3000/users/${user.id}`)
+      .then(res => res.json())
+      .then(json => {
+        return dispatch({
+          type: "FAVORITESSUCCESS",
+          articles: json.articles,
+          status: bool
+        })
+      })
+  }
+}
+
+export function handleLike(props, user) {
+  return function(dispatch) {
+    fetch(`http://localhost:3000/articles`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        url: props.url,
+        urlToImage: props.urlToImage,
+        title: props.title,
+        user_id: user
+      })
+    })
+      .then(res => res.json())
+      .then(json => {
+        return dispatch({
+          type: "ARTICLESUCCESS",
+          id: json.id,
+          url: json.url,
+          urlToImage: json.urlToImage,
+          title: json.title,
+          user_id: json.user_id
+        })
+      })
+  }
+}
+
+export function createUser(argObj) {
+  if (argObj.password !== argObj.passwordMatch) {
+    return alert("Passwords do not match")
+  } else {
+    return function(dispatch) {
+      fetch("http://localhost:3000/users")
+        .then(res => res.json())
+        .then(json => {
+          let duplicate = json.find(user => user.username === argObj.username)
+          if (duplicate !== undefined) {
+            return alert("Username is already taken")
+          } else {
+            return fetch(`http://localhost:3000/users`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                username: argObj.username,
+                password: argObj.password
+              })
+            })
+              .then(res => res.json())
+              .then(json => {
+                return dispatch({
+                  type: "USERSUCCESS",
+                  id: json.id,
+                  username: json.username,
+                  articles: [],
+                  status: "good"
+                })
+              })
+          }
+        })
+    }
+  }
+}
+
+export function fetchUser(argObj) {
+  return function(dispatch) {
+    fetch("http://localhost:3000/users")
+      .then(res => res.json())
+      .then(json => {
+        let userCheck = json.find(user => user.username === argObj.username)
+        if (userCheck !== undefined && userCheck.password === argObj.password) {
+          return dispatch({
+            type: "USERSUCCESS",
+            id: userCheck.id,
+            username: userCheck.username,
+            articles: userCheck.articles,
+            password: userCheck.password,
+            status: "good"
+          })
+        } else {
+          alert("Username and/or password is incorrect.")
+          return dispatch({
+            type: "USERERROR",
+            error: "Password is incorrect",
+            status: undefined
+          })
+        }
+      })
+  }
+}
+
 export function fetchArticles(searchTerm = "") {
   const NewsAPI = require("newsapi")
   const newsapi = new NewsAPI("3f9e3c8d8e1646bbb2e9afa8979b0335")
@@ -23,7 +136,10 @@ export function fetchArticles(searchTerm = "") {
 
         .then(responseJson => {
           let nullCheck = responseJson.articles.filter(
-            arti => arti.urlToImage !== null && arti.description !== null
+            arti =>
+              arti.urlToImage !== null &&
+              arti.description !== null &&
+              arti.description !== ""
           )
           dispatch({
             type: "ARTICLES",
@@ -43,7 +159,12 @@ export function fetchArticles(searchTerm = "") {
         .then(responseJson => {
           let validArticles = responseJson.articles
 
-            .filter(art => art.urlToImage !== null && art.description !== null)
+            .filter(
+              art =>
+                art.urlToImage !== null &&
+                art.description !== null &&
+                art.description !== ""
+            )
 
             .map(arti => {
               return checkImage(arti.urlToImage)
