@@ -133,28 +133,57 @@ a:active {
 }
 
 .signInUsername {
+  letter-spacing: 1px;
+  font-size: 1vw;
   outline: none;
   top: 0;
   bottom: 0;
   padding-left: 2%;
   grid-row-start: 1;
   grid-row-start: 2;
+  border-style: solid;
+  -webkit-letter-spacing: 2px !important;
+  border: 1px solid lightgray;
+  -webkit-border: 1px solid lightgray;
+  -moz-border: 1px solid lightgray;
+  padding-left: 10px !important;
+  outline: none;
+
+  outline: none;
+  border-radius: 1px;
 }
 
 .signInPassword {
+  letter-spacing: 1px;
+  font-size: 1vw;
   outline: none;
   top: 0;
   bottom: 0;
   padding-left: 2%;
   grid-row-start: 2;
   grid-row-start: 3;
+  border-style: solid;
+  -webkit-letter-spacing: 2px !important;
+  border: 1px solid lightgray;
+  -webkit-border: 1px solid lightgray;
+  -moz-border: 1px solid lightgray;
+  padding-left: 10px !important;
+  outline: none;
+
+  outline: none;
+  border-radius: 1px;
 }
 
 .signInSubmit {
+  border: none;
   background-color: #1c68f7;
   color: white;
   outline: none;
   font-size: 1.5vw;
+}
+
+.signInSubmit:active {
+  outline: 1px solid lightgray;
 }
 
 .signUpForm {
@@ -180,34 +209,75 @@ a:active {
 }
 
 .signUpUsername {
+  letter-spacing: 1px;
+  font-size: 1vw;
   outline: none;
   padding-left: 2%;
   grid-row-start: 1;
   grid-row-start: 2;
+  border-style: solid;
+  -webkit-letter-spacing: 2px !important;
+  border: 1px solid lightgray;
+  -webkit-border: 1px solid lightgray;
+  -moz-border: 1px solid lightgray;
+  padding-left: 10px !important;
+  outline: none;
+
+  outline: none;
+  border-radius: 1px;
 }
 
 .signUpPassword1 {
+  letter-spacing: 1px;
+  font-size: 1vw;
   outline: none;
   padding-left: 2%;
   grid-row-start: 2;
   grid-row-start: 3;
+  border-style: solid;
+  -webkit-letter-spacing: 2px !important;
+  border: 1px solid lightgray;
+  -webkit-border: 1px solid lightgray;
+  -moz-border: 1px solid lightgray;
+  padding-left: 10px !important;
+  outline: none;
+
+  outline: none;
+  border-radius: 1px;
 }
 
 .signUpPassword2 {
+  letter-spacing: 1px;
+  font-size: 1vw;
   outline: none;
   padding-left: 2%;
   padding-left: 2%;
   grid-row-start: 3;
   grid-row-start: 4;
+  border-style: solid;
+  -webkit-letter-spacing: 2px !important;
+  border: 1px solid lightgray;
+  -webkit-border: 1px solid lightgray;
+  -moz-border: 1px solid lightgray;
+  padding-left: 10px !important;
+  outline: none;
+
+  outline: none;
+  border-radius: 1px;
 }
 
 .signUpSubmit {
+  border: none;
   background-color: #1c68f7;
   color: white;
   grid-row-start: 4;
   grid-row-start: 5;
   outline: none;
   font-size: 1.5vw;
+}
+
+.signUpSubmit:active {
+  outline: 1px solid lightgray;
 }
 
 .favoritesDiv {
@@ -359,7 +429,7 @@ a:active {
 /* Links inside the dropdown */
 .dropdown-content a {
   color: #2d1450;
-  padding: 12px 16px;
+  padding: 6% 8%;
   text-decoration: none;
   display: block;
   z-index: 8000;
