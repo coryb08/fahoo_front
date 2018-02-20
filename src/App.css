@@ -8,6 +8,7 @@
 body {
   margin: 0 auto;
   max-width: 100%;
+
   max-height: 100%;
   /* width: 200vw; */
   height: 100%;
@@ -318,10 +319,11 @@ a:active {
   cursor: pointer;
   float: right;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  /* text-overflow: ellipsis; */
   content: "";
-  height: 80%;
+  height: auto;
+  min-height: 80%;
   width: 90%;
   border-radius: 4%;
   border: 2px solid #2d1450;
@@ -443,7 +445,7 @@ a:active {
 }
 
 .searchInput {
-  height: calc(100% - 4px);
+  height: 100%;
   font-size: 1.4vw;
   top: 0;
   bottom: 0;
@@ -458,8 +460,9 @@ a:active {
   -moz-border: 1px solid lightgray;
   padding-left: 10px;
   outline: none;
-  border-radius: 0;
+
   outline: none;
+  border-radius: 1px;
 }
 
 ::-moz-focus-inner {
@@ -1028,4 +1031,46 @@ a:active {
   letter-spacing: 0;
   font-size: 1vw;
   font-weight: 700 !important;
+}
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  -webkit-box-sizing: border-box;
+
+  -moz-box-sizing: border-box;
+
+  box-sizing: border-box;
+
+  -webkit-background-clip: padding;
+
+  -moz-background-clip: padding;
+
+  -webkit-border-radius: 0;
+
+  -moz-border-radius: 0;
+
+  -ms-border-radius: 0;
+
+  -o-border-radius: 0;
+
+  -webkit-appearance: none;
+
+  outline: 0;
+
+  margin: 0;
+
+  padding: 0;
 }
