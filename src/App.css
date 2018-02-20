@@ -453,7 +453,11 @@ a:active {
   grid-column-end: 2;
   letter-spacing: 2px;
   border: 1px solid lightgray;
+  -webkit-border: 1px solid lightgray;
+  -moz-border: 1px solid lightgray;
   padding-left: 10px;
+  outline: none;
+  border-radius: 0;
   outline: none;
 }
 
@@ -677,12 +681,12 @@ a:active {
   letter-spacing: 1px;
   color: white;
   z-index: 6000;
-  height: 100%;
+  height: 6.9em;
   width: 90%;
   left: 0;
   top: 5%;
   vertical-align: center;
-  line-height: 130%;
+  line-height: 1.4em;
   position: absolute;
   grid-column-start: 3;
   grid-column-end: 4;
@@ -693,7 +697,7 @@ a:active {
   display: -webkit-box;
   font-size: 1.4vw;
 
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 
@@ -740,7 +744,7 @@ a:active {
   background-position: center;
 }
 
-.mainArticleTitle:hover {
+.mainTitleGrid:hover {
   text-decoration: underline;
 }
 
