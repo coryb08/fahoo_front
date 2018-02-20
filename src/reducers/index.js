@@ -23,6 +23,19 @@ const articles = (state = defaultState, action) => {
   }
 }
 
+const favorites = (state, action) => {
+  switch (action.type) {
+    case "FAVORITESSUCCESS":
+      return {
+        ...state,
+        articles: action.articles,
+        status: action.status
+      }
+    default:
+      return { ...state, status: false }
+  }
+}
+
 const offClick = (state, action) => {
   console.log("reducer ", state)
   switch (action.type) {
@@ -42,7 +55,9 @@ const users = (state, action) => {
     case "USERSUCCESS":
       return {
         ...state,
+        id: action.id,
         username: action.username,
+        password: action.password,
         articles: action.articles,
         status: action.status
       }
@@ -59,7 +74,7 @@ const users = (state, action) => {
   }
 }
 
-export default combineReducers({ articles, offClick, users })
+export default combineReducers({ articles, offClick, users, favorites })
 
 // import { combineReducers } from "redux"
 //

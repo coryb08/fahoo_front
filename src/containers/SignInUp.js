@@ -11,7 +11,7 @@ export class SignInUp extends Component {
     if (event.target[0].value === "" || event.target[1].value === "") {
       return
     } else {
-      return this.props.fetchUser({
+      this.props.fetchUser({
         username: event.target[0].value,
         password: event.target[1].value
       })
@@ -37,8 +37,8 @@ export class SignInUp extends Component {
   }
 
   handleOffClick = event => {
+    console.log("event ", event)
     event.preventDefault()
-
     if (event.target.id === "darkness") {
       return this.props.handleOffClick(false)
     } else {

@@ -58,7 +58,7 @@ a:active {
 
 .container {
   padding-top: 0.3vw;
-  grid-template-columns: 10% 61% auto 10%;
+  grid-template-columns: 15vw 59vw auto 15vw;
   grid-template-rows: 5vw 40vw 50vw 5vw;
   grid-gap: 1vw;
   display: grid;
@@ -209,23 +209,128 @@ a:active {
   font-size: 1.5vw;
 }
 
+.favoritesDiv {
+  /* display: none; */
+  position: fixed; /* Stay in place */
+  z-index: 9000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.UOList {
+  width: 90%;
+  overflow: auto;
+  list-style-type: none;
+}
+
+.outerFavoritesDiv {
+  /* display: none; */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  pointer-events: none;
+}
+
+.favoritesContent {
+  pointer-events: auto;
+  border-radius: 1%;
+  grid-gap: 1vw;
+  display: grid;
+  grid-template-columns: 100%;
+  overflow: auto;
+  grid-template-rows: auto;
+  background-color: #fefefe;
+  margin: 8% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  height: auto;
+  max-height: 30vw;
+  width: 50vw; /* Could be more or less, depending on screen size */
+}
+
+.FavCard {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 43% 57%;
+  height: 6vw;
+  padding-top: 2%;
+  padding-bottom: 10%;
+  text-overflow: auto;
+}
+
+.FavImage {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 0;
+  grid-row-end: 4;
+  position: absolute;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.FavTitle {
+  overflow: hidden;
+  position: absolute;
+  margin-top: 0;
+  vertical-align: center;
+  left: 2%;
+  right: 2%;
+  top: 0;
+  color: #020e65;
+  bottom: 0;
+  height: 100%;
+  letter-spacing: 0;
+  font-weight: 700 !important;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.FavTitle:hover {
+  color: #324fe1;
+}
+
 .dropbtn {
   background-color: white;
-  color: black;
-
-  font-size: 1.6vw;
+  font-weight: 600;
+  color: #2d1450;
+  margin-top: 3.5%;
+  font-size: 1.3vw;
   border: none;
   cursor: pointer;
   float: right;
-  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  content: "";
+  height: 80%;
+  width: 90%;
   border-radius: 4%;
-  border: 1px solid lightgray;
+  border: 2px solid #2d1450;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-
+  overflow: hide;
   align-self: center;
   /* justify-content: center; */
   height: 100%;
@@ -251,7 +356,7 @@ a:active {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  color: #2d1450;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -299,7 +404,7 @@ a:active {
 
 .header {
   position: relative;
-
+  width: 95%;
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 1;
@@ -424,11 +529,9 @@ a:active {
   grid-template-rows: 60% 40%;
 }
 .fourArticlesCard2 {
-  text-overflow: ellipsis;
   display: grid;
   grid-column-start: 3;
   grid-column-end: 4;
-
   grid-template-columns: 100%;
   grid-template-rows: 60% 40%;
 }
@@ -446,10 +549,15 @@ a:active {
   font-size: 1.2vw;
   grid-row-end: 3;
   padding-top: 3%;
+  line-height: 1.4vw;
   /* top: 0; */
   /* bottom: 0; */
 
   margin: auto;
+}
+
+.fourSubTitle:hover {
+  color: #324fe1;
 }
 
 .fourSubArticlesDiv {
@@ -480,9 +588,36 @@ a:active {
   width: 100%;
 }
 
+.fourSubImageLike {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  cursor: grab;
+  height: 17%;
+  width: 5%;
+  opacity: 0.4;
+  z-index: 9000;
+  position: absolute;
+  bottom: 42%;
+
+  /* margin-left: auto; */
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-repeat: no-repeat;
+  -webkit-background-size: 60%;
+  -moz-background-size: 60%;
+  -o-background-size: 60%;
+  background-size: 60%;
+  background-position: center;
+}
+
+.fourSubImageLike:hover {
+  opacity: 1;
+}
+.fourSubImageLike:active {
+  cursor: grabbing;
+}
+
 .mainArticleDiv {
   overflow: hidden;
-
   display: grid;
   position: relative;
   grid-column-start: 1;
@@ -490,13 +625,13 @@ a:active {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-template-columns: 60% 2% 36% 2%;
-  grid-template-rows: auto auto 15%;
+  grid-template-rows: 48% auto 15%;
+  /* white-space: normal; */
 }
 
 .mask {
   width: 100%;
   height: 100%;
-
   background-color: black;
   opacity: 0.7;
   z-index: 4;
@@ -517,40 +652,61 @@ a:active {
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
-  height: 100%;
+  height: 6em;
   width: 100%;
+  color: white;
+  display: -webkit-box;
+  /* white-space: nowrap; */
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   left: 0;
-}
-
-.mainArticleTitle {
+  padding-top: 5%;
   overflow: hidden;
-  font-size: 1.5vw;
+  vertical-align: center;
+  line-height: 1.55em;
+  font-size: 1.8vw;
   font-weight: 600;
   letter-spacing: 2px;
   color: white;
   z-index: 6000;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  vertical-align: center;
-  line-height: 150%;
-  position: absolute;
-  grid-column-start: 3 !important;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  display: inline;
 }
 
-.mainArticleTitle:hover {
-  text-decoration: underline;
+.mainDescriptionGrid {
+  overflow: hidden;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: white;
+  z-index: 6000;
+  height: 100%;
+  width: 90%;
+  left: 0;
+  top: 5%;
+  vertical-align: center;
+  line-height: 130%;
+  position: absolute;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  /* top: -1.4vw; */
+  bottom: 0;
+  display: -webkit-box;
+  font-size: 1.4vw;
+
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
 }
 
 .mainArticleDescription {
-  font-size: 1vw;
-  font-weight: 400;
-  letter-spacing: 1px;
   overflow: hidden;
+  display: -webkit-box-flex;
+
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* text-overflow: ellipsis; */
+  font-size: 1.4vw;
+  font-weight: 300;
+  letter-spacing: 1px;
   color: white;
   z-index: 6000;
   height: 100%;
@@ -559,16 +715,16 @@ a:active {
   vertical-align: center;
   line-height: 130%;
   position: absolute;
-  grid-column-start: 3 !important;
+  grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
-  top: 0;
+  top: -1.4vw;
   bottom: 0;
-  display: inline;
 }
 
-.mainArticleImage {
+.mainArticleImage,
+.mainArticleImageLike {
   position: absolute;
   grid-column-start: 1;
   grid-column-end: 2;
@@ -582,6 +738,39 @@ a:active {
   -o-background-size: cover;
   background-size: cover;
   background-position: center;
+}
+
+.mainArticleTitle:hover {
+  text-decoration: underline;
+}
+
+.mainArticleImageLike {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  cursor: grab;
+  height: 20%;
+  width: 20%;
+  opacity: 0.4;
+  z-index: 8000;
+  overflow: hidden;
+  position: absolute;
+  bottom: 2%;
+  left: -5%;
+  margin: auto;
+  background-repeat: no-repeat;
+  -webkit-background-size: 55%;
+  -moz-background-size: 55%;
+  -o-background-size: 55%;
+  background-size: 55%;
+  background-position: right;
+}
+
+.mainArticleImageLike:hover {
+  cursor: grab;
+  opacity: 1;
+}
+
+.mainArticleImageLike:active {
+  cursor: grabbing;
 }
 
 .mainArticleImageBlur {
@@ -629,10 +818,7 @@ a:active {
   right: 0;
   height: 100%;
   grid-template-columns: 100%;
-  margin-top: 5%;
-
-  /* grid-template-rows: auto;
-  grid-auto-rows: auto; */
+  margin-top: 2%;
   grid-gap: 1%;
   position: absolute;
 }
@@ -642,10 +828,11 @@ a:active {
   display: grid;
   overflow: hidden;
   grid-template-columns: 30% 70%;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 43% 57%;
   height: 7.5vw;
   padding-top: 2%;
   padding-bottom: 10%;
+  text-overflow: auto;
 }
 
 .RAdescription {
@@ -655,7 +842,7 @@ a:active {
   left: 2%;
   top: 12%;
   font-size: 1.2vw;
-  height: 100%;
+
   letter-spacing: 0;
   line-height: 120%;
   grid-column-start: 2;
@@ -667,16 +854,55 @@ a:active {
 .RAimage {
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-start: 0;
+  grid-row-end: 4;
+  position: absolute;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
   width: 100%;
+}
+
+.RAImageLike {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  cursor: grab;
+  height: 29%;
+  width: 25%;
+  opacity: 0.4;
+  z-index: 9999;
+  bottom: 2%;
+  position: absolute;
+  /* margin-left: auto; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 0;
+  grid-row-end: 4;
+  background-repeat: no-repeat;
+  -webkit-background-size: 70%;
+  -moz-background-size: 70%;
+  -o-background-size: 70%;
+  background-size: 70%;
+  background-position: center;
+}
+
+.RAImageLike:hover {
+  cursor: grab;
+  opacity: 1;
+}
+
+.RAImageLike:active {
+  cursor: grabbing;
 }
 
 .RAtitle {
   overflow: hidden;
   position: absolute;
   margin-top: 0;
-  vertical-align: center;
+  /* vertical-align: center; */
   left: 2%;
   right: 2%;
   top: 0;
@@ -699,15 +925,16 @@ a:active {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: -1;
+  grid-row-end: 4;
   display: grid;
+  top: 5%;
   position: absolute;
   grid-template-columns: 100%;
   /* grid-template-rows: auto; */
   /* grid-auto-rows: auto; */
   grid-gap: 1vw;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .filteredSearchCard {

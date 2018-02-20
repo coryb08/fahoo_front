@@ -6,14 +6,31 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 
 const UserNav = props => {
-  console.log("nav ", props)
+  console.log("nav ", props.user)
 
   const handleOffClick = event => {
-    return props.handleOffClick(true)
+    if (!props.user.users.status) {
+      return props.handleOffClick(true)
+    } else {
+      return
+    }
+  }
+
+  const handleFavorites = event => {
+    console.log("nav ", props.user)
+    if (props.user.users.status) {
+      props.handleFavorites(props.user.users, true)
+    } else {
+      return
+    }
   }
 
   const handleLogout = event => {
-    return window.location.reload(true)
+    if (!props.user.users.status) {
+      return
+    } else {
+      return window.location.reload(true)
+    }
   }
 
   return (
@@ -25,7 +42,9 @@ const UserNav = props => {
       </button>
       <div className="dropdown-content">
         <a href="#">Profile</a>
-        <a href="#">Bookmarks</a>
+        <a onClick={handleFavorites} href="#">
+          Favorites
+        </a>
         <a onClick={handleLogout} href="#">
           Log Out
         </a>
