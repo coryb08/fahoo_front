@@ -68,9 +68,7 @@ export class SignInUp extends Component {
                 className="signInPassword"
                 type="password"
               />
-              <button value="Sign In" className="signInSubmit" type="submit">
-                Sign In
-              </button>
+              <input value="Sign In" className="signInSubmit" type="submit" />
             </form>
             <form onSubmit={this.handleUpSubmit} className="signUpForm">
               <label className="signUpLabel">Sign Up</label>
@@ -89,9 +87,7 @@ export class SignInUp extends Component {
                 className="signUpPassword2"
                 type="password"
               />
-              <button className="signUpSubmit" type="submit">
-                Sign Up
-              </button>
+              <input value="Sign Up" className="signUpSubmit" type="submit" />
             </form>
           </div>
         </div>

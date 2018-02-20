@@ -17,7 +17,7 @@ const Header = props => {
           onClick={handleOnSubmit}
           className="imageLogo"
           style={{
-            backgroundImage: `url(https://www.alienskin.com/site/wp-content/uploads/2013/09/Yahoo-reflect.png)`
+            backgroundImage: `url(https://farm5.staticflickr.com/4764/39485392885_10709ac6c1.jpg)`
           }}
         />
       </div>
