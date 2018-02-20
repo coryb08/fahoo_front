@@ -443,7 +443,7 @@ a:active {
 }
 
 .searchInput {
-  height: calc(100% - 4px);
+  height: calc(100%);
   font-size: 1.4vw;
   top: 0;
   bottom: 0;
@@ -451,7 +451,7 @@ a:active {
   width: 100%;
   grid-column-start: 1;
   grid-column-end: 2;
-  letter-spacing: 2px;
+  -webkit-letter-spacing: 2px;
   border: 1px solid lightgray;
   -webkit-border: 1px solid lightgray;
   -moz-border: 1px solid lightgray;
