@@ -22,7 +22,7 @@ let defaultPayload = {
 
 export function handleFavorites(user, bool = false) {
   return function(dispatch) {
-    fetch(`http://localhost:3000/users/${user.id}`)
+    fetch(`https://fahooback.herokuapp.com/users/${user.id}`)
       .then(res => res.json())
       .then(json => {
         return dispatch({
@@ -36,7 +36,7 @@ export function handleFavorites(user, bool = false) {
 
 export function handleLike(props, user) {
   return function(dispatch) {
-    fetch(`http://localhost:3000/articles`, {
+    fetch(`https://fahooback.herokuapp.com/articles`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -65,14 +65,14 @@ export function createUser(argObj) {
     return alert("Passwords do not match")
   } else {
     return function(dispatch) {
-      fetch("http://localhost:3000/users")
+      fetch("https://fahooback.herokuapp.com/users")
         .then(res => res.json())
         .then(json => {
           let duplicate = json.find(user => user.username === argObj.username)
           if (duplicate !== undefined) {
             return alert("Username is already taken")
           } else {
-            return fetch(`http://localhost:3000/users`, {
+            return fetch(`https://fahooback.herokuapp.com/users`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -98,7 +98,7 @@ export function createUser(argObj) {
 
 export function fetchUser(argObj) {
   return function(dispatch) {
-    fetch("http://localhost:3000/users")
+    fetch("https://fahooback.herokuapp.com/users")
       .then(res => res.json())
       .then(json => {
         let userCheck = json.find(user => user.username === argObj.username)

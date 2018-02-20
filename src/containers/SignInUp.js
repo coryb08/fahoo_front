@@ -4,23 +4,29 @@ import { connect } from "react-redux"
 import * as actions from "../actions"
 
 export class SignInUp extends Component {
+  constructor(props) {
+    super()
+    this.state = {
+      username: "",
+      password: ""
+    }
+  }
   handleInSubmit = event => {
     event.preventDefault()
-    event.stopPropagation()
 
-    if (event.target[0].value === "" || event.target[1].value === "") {
+    if (this.state.username === "" || this.state.password === "") {
       return
     } else {
-      this.props.fetchUser({
-        username: event.target[0].value,
-        password: event.target[1].value
-      })
+      return this.props.fetchUser(this.state)
+      // username: event.target[0].value,
+      // password: event.target[1].value
+      // })
     }
   }
 
   handleUpSubmit = event => {
     event.preventDefault()
-    event.stopPropagation()
+
     if (
       event.target[0].value === "" ||
       event.target[1].value === "" ||
@@ -46,6 +52,14 @@ export class SignInUp extends Component {
     }
   }
 
+  updateForm = event => {
+    event.preventDefault()
+
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render() {
     return (
       <div>
@@ -56,28 +70,41 @@ export class SignInUp extends Component {
         />
         <div className="outerSignDiv">
           <div id="whiteDiv" className="signInUpContent">
-            <form className="signInForm" onSubmit={this.handleInSubmit}>
+            <form className="signInForm">
               <label className="signInLabel">Sign In</label>
               <input
+                onChange={this.updateForm}
+                name="username"
                 placeholder="username"
                 className="signInUsername"
                 type="text"
               />
               <input
+                onChange={this.updateForm}
+                name="password"
                 placeholder="password"
                 className="signInPassword"
                 type="password"
               />
-              <input value="Sign In" className="signInSubmit" type="submit" />
+              <button
+                value="Sign In"
+                onClick={this.handleInSubmit}
+                className="signInSubmit"
+                type="submit"
+              >
+                Sign In
+              </button>
             </form>
-            <form onSubmit={this.handleUpSubmit} className="signUpForm">
+            <form onSubmit={() => this.handleUpSubmit()} className="signUpForm">
               <label className="signUpLabel">Sign Up</label>
               <input
+                name="username"
                 placeholder="username"
                 className="signUpUsername"
                 type="text"
               />
               <input
+                name="password"
                 placeholder="password"
                 className="signUpPassword1"
                 type="password"
@@ -87,7 +114,9 @@ export class SignInUp extends Component {
                 className="signUpPassword2"
                 type="password"
               />
-              <input value="Sign Up" className="signUpSubmit" type="submit" />
+              <button className="signUpSubmit" type="submit">
+                Sign Up
+              </button>
             </form>
           </div>
         </div>
