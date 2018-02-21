@@ -45,8 +45,15 @@ const offClick = (state, action) => {
         offClick: action.offClick
       }
 
+    case "WARNING":
+      return {
+        ...state,
+        offClick: true,
+        warningStatus: false
+      }
+
     default:
-      return { ...state, offClick: false }
+      return { ...state, offClick: false, warningStatus: true }
   }
 }
 

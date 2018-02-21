@@ -11,7 +11,7 @@ import SearchResults from "./components/SearchResults"
 import { bindActionCreators } from "redux"
 import RemainingArticles from "./components/RemainingArticles"
 import Favorites from "./containers/Favorites"
-
+import Warning from "./containers/Warning"
 // function componentDidMount() {
 //   console.log("app mounted");
 //   this.props.actions.fetchArticles();
@@ -20,7 +20,7 @@ import Favorites from "./containers/Favorites"
 // componentDidMount();
 
 const Body = props => {
-  console.log("props in body ", props)
+  console.log("props in body ", props.state.offClick.warningStatus)
   if (props.state.articles.searchTerm !== "") {
     return (
       <div className="container">
@@ -35,7 +35,7 @@ const Body = props => {
       <div>
         <div className="container">
           {props.state.favorites.status ? <Favorites /> : <div />}
-
+          {props.state.offClick.warningStatus ? <Warning /> : <div />}
           {props.state.offClick.offClick ? <SignInUp /> : <div />}
           <Header />
           <Articles />

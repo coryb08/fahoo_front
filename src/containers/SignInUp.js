@@ -96,6 +96,7 @@ export class SignInUp extends Component {
               </button>
             </form>
             <form onSubmit={this.handleUpSubmit} className="signUpForm">
+              <h1 className="or">or</h1>
               <label className="signUpLabel">Sign Up</label>
               <input
                 name="username"
@@ -109,6 +110,7 @@ export class SignInUp extends Component {
                 className="signUpPassword1"
                 type="password"
               />
+
               <input
                 placeholder="confirm password"
                 className="signUpPassword2"

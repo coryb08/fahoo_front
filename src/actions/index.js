@@ -34,6 +34,14 @@ export function handleFavorites(user, bool = false) {
   }
 }
 
+export function handleWarning(bool = true) {
+  return {
+    type: "WARNING",
+    status: bool,
+    offClick: false
+  }
+}
+
 export function handleLike(props, user) {
   return function(dispatch) {
     fetch(`https://fahooback.herokuapp.com/articles`, {
