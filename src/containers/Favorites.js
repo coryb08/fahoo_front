@@ -14,7 +14,7 @@ const Favorites = props => {
     props.handleOffClick(false)
   }
 
-  let artMap = props.state.users.articles.map(art => {
+  let artMap = props.state.favorites.articles.map(art => {
     return (
       <div className="FavCard">
         <a href={art.url} target="_blank">
