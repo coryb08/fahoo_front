@@ -362,9 +362,9 @@ a:active {
 .greeting {
   align-self: center;
   justify-self: center;
-  color: #2f323b;
+  color: #60c1a3;
   grid-row: 1 / 2;
-  text-shadow: 4px 4px lightgray;
+  text-shadow: 0.3vw 0.3vw lightgray;
 }
 
 .message {
@@ -378,8 +378,8 @@ a:active {
   z-index: 2;
   grid-row: 2 / 3;
   font-size: 2vw;
-  color: #2f323b;
-  font-weight: 500;
+  color: #2e3032;
+  font-weight: 550;
 }
 /*
 .stripe {
