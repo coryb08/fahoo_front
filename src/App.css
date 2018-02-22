@@ -1,23 +1,26 @@
 * {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  word-wrap: break-word;
-  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0 auto;
-  max-width: 100%;
-
-  max-height: 100%;
-  /* width: 200vw; */
+  margin: 0;
+  padding: 0;
   height: 100%;
-  margin-top: 0.8%;
-  /* bottom: 1%; */
-
-  /* min-width: 700px;
-  min-height: 680px; */
-  /* height: 200vw; */
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/dust_scratches.png");
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 h4 {
@@ -30,6 +33,9 @@ h4 {
 
 h1 {
   font-size: 5vw;
+}
+
+a {
 }
 
 a:link {
@@ -55,16 +61,11 @@ a:active {
 }
 
 .container {
-  padding-top: 0.3vw;
-  grid-template-columns: 15vw 59vw auto 15vw;
-  grid-template-rows: 5vw 40vw 50vw 5vw;
-  grid-gap: 1vw;
   display: grid;
+  height: 100vw;
+  grid-template-columns: 10vw 80vw 10vw;
   position: relative;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  height: 100%;
-  /* width: 100vh; */
+  grid-template-rows: 10% 80% 10%;
 }
 
 .signInUpDiv {
@@ -304,107 +305,6 @@ a:active {
   outline: 1px solid lightgray;
 }
 
-.favoritesDiv {
-  /* display: none; */
-  position: fixed; /* Stay in place */
-  z-index: 9000; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-.UOList {
-  width: 90%;
-  overflow: auto;
-  list-style-type: none;
-}
-
-.outerFavoritesDiv {
-  /* display: none; */
-  position: fixed; /* Stay in place */
-  z-index: 9999; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  pointer-events: none;
-}
-
-.favoritesContent {
-  pointer-events: auto;
-  border-radius: 1%;
-  grid-gap: 1vw;
-  display: grid;
-  grid-template-columns: 100%;
-  overflow: auto;
-  grid-template-rows: auto;
-  background-color: #fefefe;
-  margin: 8% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  height: auto;
-
-  max-height: auto;
-  width: 50vw; /* Could be more or less, depending on screen size */
-}
-
-.FavCard {
-  position: relative;
-  display: grid;
-  overflow: hidden;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 43% 57%;
-  height: 6vw;
-  padding-top: 2%;
-  padding-bottom: 10%;
-
-  text-overflow: auto;
-}
-
-.FavImage {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 0;
-  grid-row-end: 4;
-  position: absolute;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-}
-
-.FavTitle {
-  overflow: hidden;
-  position: absolute;
-  margin-top: 0;
-  vertical-align: center;
-  left: 2%;
-  right: 2%;
-  top: 0;
-  color: #020e65;
-  bottom: 0;
-  height: 100%;
-  letter-spacing: 0;
-  font-weight: 700 !important;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 4;
-}
-
-.FavTitle:hover {
-  color: #324fe1;
-}
-
 .warningDiv {
   /* display: none; */
   position: fixed; /* Stay in place */
@@ -450,821 +350,74 @@ a:active {
   width: 10%;
 }
 
-.dropbtn {
-  background-color: white;
-  font-weight: 600;
-  color: #2e1250;
-  margin-top: 3.5%;
-  font-size: 1.3vw;
-  border: none;
-  cursor: pointer;
-  float: right;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  content: "";
-  height: 80%;
-  /* min-height: 80%; */
-  width: 90%;
-  border-radius: 4%;
-  border: 2px solid #2e1250;
+.home {
+  display: grid;
+  grid-template-rows: 10% 10% 25% auto;
+  text-align: center;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  position: relative;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  overflow: hide;
+.greeting {
   align-self: center;
-  /* justify-content: center; */
-  height: 100%;
-  float: right;
-  z-index: 8000;
-  display: inline-block;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  justify-self: center;
+  color: #2f323b;
+  grid-row: 1 / 2;
+  text-shadow: 4px 4px lightgray;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  font-weight: 900;
-  font-size: 1.7vw;
-  position: absolute;
-  width: 100%;
-  z-index: 8000;
-  background-color: #f9f9f9;
-  /* min-width: 160px; */
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
+.message {
+  text-shadow: 2px 2px lightgray;
+  align-self: center !important;
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: #2e1250;
-  padding: 6% 8%;
-  text-decoration: none;
-  display: block;
-  z-index: 8000;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-  z-index: 8000;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-  position: relative;
-  display: inline-block;
-  z-index: 8000;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropbtn:hover .dropdown-content {
-  background-color: white;
-  border: none;
-  z-index: 8000;
-  border: 1px solid white;
-  display: block;
-  position: relative;
-  display: inline-block;
-}
-
-.imageLogo {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-  background-position: left;
-  height: 100%;
-  width: 100%;
-}
-
-.header {
-  position: relative;
-  width: 95%;
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 100%;
-  height: 100%;
-}
-
-.searchFormDiv {
-  /* height: 5vw; */
-  display: grid;
-  position: relative;
-  width: 100%;
-  /* overflow: hidden; */
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 100%;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  /* padding-left: 2vw; */
-  /* margin-top: 1%; */
-}
-
-.searchForm {
-  display: grid;
-  position: absolute;
-  width: 100%;
-  /* overflow: hidden; */
-  grid-template-columns: 80% 20%;
-  grid-template-rows: auto;
-  grid-column-start: 2;
-  grid-column-end: 3;
-
-  margin-top: 1%;
-}
-
-.searchInput {
-  height: 100%;
-  font-size: 1.4vw;
-  top: 0;
   bottom: 0;
+  text-align: center;
+  justify-self: center !important;
   position: absolute;
-  width: 100%;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  border-style: solid;
-  -webkit-letter-spacing: 2px !important;
-  border: 1px solid lightgray;
-  -webkit-border: 1px solid lightgray;
-  -moz-border: 1px solid lightgray;
-  padding-left: 10px !important;
-  outline: none;
-
-  outline: none;
-  border-radius: 1px;
+  z-index: 2;
+  grid-row: 2 / 3;
+  font-size: 2vw;
+  color: #2f323b;
+  font-weight: 500;
 }
-
-::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-::-webkit-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-.mainLogo {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+/*
+.stripe {
+  z-index: 1;
+  position: absolute;
+  grid-row: 2 / 4;
   height: 100%;
-  margin-right: 10%;
-}
-
-.searchSubmit {
-  top: 0;
-  background-image: url("../images/Screen.png");
-  background-position: center;
-  background-color: #0064fe;
+  width: 100%;
   background-repeat: no-repeat;
-  border-top-right-radius: 4%;
-  border-bottom-right-radius: 4%;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  cursor: pointer;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  background-position: center;
   background-size: cover;
-  outline: none;
-  padding: 0;
-  border: 0px solid transparent;
-}
-
-.searchSubmit:active {
-  border: 1px solid white;
-}
-
-/* .searchButton {
-  position: absolute;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  height: 3vw;
-  width: 20%;
+  background-image: url("../images/brush.png");
 } */
 
-.defaultArticlesDiv {
-  display: grid;
-  overflow: hidden;
-
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-template-columns: 1fr;
-  grid-template-rows: 65% 35%;
-}
-
-.weatherWidget {
-}
-
-.fourArticlesCard0 {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 60% 40%;
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
-.fourArticlesCard1 {
-  display: grid;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-template-columns: 100%;
-  grid-template-rows: 60% 40%;
-}
-.fourArticlesCard2 {
-  display: grid;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-template-columns: 100%;
-  grid-template-rows: 60% 40%;
-}
-.fourArticlesCard3 {
-  /* margin: auto; */
-  display: grid;
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-template-columns: 100%;
-  grid-template-rows: 60% 40%;
-}
-
-.fourSubTitle {
-  grid-row-start: 2;
-  font-weight: 500;
-  font-size: 1.2vw;
-  grid-row-end: 3;
-  padding-top: 3%;
-  line-height: 1.4vw;
-  /* top: 0; */
-  /* bottom: 0; */
-
-  margin: auto;
-}
-
-.fourSubTitle:hover {
-  color: #324fe1;
-}
-
-.fourSubArticlesDiv {
-  text-overflow: ellipsis;
-  top: 1vw;
-  position: relative;
-  width: 100%;
-  display: grid;
-  grid-gap: 1%;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100%;
-}
-
-.fourSubImage {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-}
-
-.fourSubImageLike0 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
-  cursor: grab;
-
-  opacity: 0.4;
-  z-index: 9000;
-  position: absolute;
-  bottom: 42%;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  /* margin-left: auto; */
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-repeat: no-repeat;
-  height: 17%;
-  width: 17%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  background-position: center;
-}
-
-.fourSubImageLike1 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
-  cursor: grab;
-
-  opacity: 0.4;
-  z-index: 9000;
-  position: absolute;
-  bottom: 42%;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  /* margin-left: auto; */
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-repeat: no-repeat;
-  height: 17%;
-  width: 17%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  background-position: center;
-}
-
-.fourSubImageLike2 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
-  cursor: grab;
-
-  opacity: 0.4;
-  z-index: 9000;
-  position: absolute;
-  bottom: 42%;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  /* margin-left: auto; */
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-repeat: no-repeat;
-  height: 17%;
-  width: 17%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  background-position: center;
-}
-
-.fourSubImageLike3 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
-  cursor: grab;
-
-  opacity: 0.4;
-  z-index: 9000;
-  position: absolute;
-  bottom: 42%;
-  grid-column-start: 4;
-  grid-column-end: 5;
-  /* margin-left: auto; */
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-repeat: no-repeat;
-  height: 17%;
-  width: 17%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  background-position: center;
-}
-
-.fourSubImageLike0:hover {
-  opacity: 1;
-}
-.fourSubImageLike0:active {
-  cursor: grabbing;
-}
-
-.fourSubImageLike1:hover {
-  opacity: 1;
-}
-.fourSubImageLike1:active {
-  cursor: grabbing;
-}
-
-.fourSubImageLike2:hover {
-  opacity: 1;
-}
-.fourSubImageLike2:active {
-  cursor: grabbing;
-}
-
-.fourSubImageLike3:hover {
-  opacity: 1;
-}
-.fourSubImageLike3:active {
-  cursor: grabbing;
-}
-
-.mainArticleDiv {
-  overflow: hidden;
-  display: grid;
-  position: relative;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-template-columns: 60% 2% 36% 2%;
-  grid-template-rows: 48% auto 15%;
-  /* white-space: normal; */
-}
-
-.mask {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.7;
-  z-index: 4;
-  position: absolute;
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  top: 0;
-  left: 0;
+.facebook {
   bottom: 0;
-  right: 0;
-}
-
-.mainTitleGrid {
-  position: absolute;
-  grid-column-start: 3 !important;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  height: 6em;
-  width: 100%;
-  color: white;
-  display: -webkit-box;
-  /* white-space: nowrap; */
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  left: 0;
-  padding-top: 5%;
-  overflow: hidden;
-  vertical-align: center;
-  line-height: 1.55em;
-  font-size: 1.8vw;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: white;
-  z-index: 6000;
-}
-
-.mainDescriptionGrid {
-  overflow: hidden;
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: white;
-  z-index: 6000;
-  height: 6.9em;
-  width: 90%;
-  left: 0;
-  top: 5%;
-  vertical-align: center;
-  line-height: 1.4em;
-  position: absolute;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  /* top: -1.4vw; */
-  bottom: 0;
-  display: -webkit-box;
-  font-size: 1.4vw;
-
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-}
-
-.mainArticleDescription {
-  overflow: hidden;
-  display: -webkit-box-flex;
-
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  /* text-overflow: ellipsis; */
-  font-size: 1.4vw;
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: white;
-  z-index: 6000;
+  left: 34%;
+  grid-row: 3 / 4;
   height: 100%;
-  width: 90%;
-  left: 0;
-  vertical-align: center;
-  line-height: 130%;
+  width: 10%;
   position: absolute;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  top: -1.4vw;
-  bottom: 0;
-}
-
-.mainArticleImage,
-.mainArticleImageLike {
-  position: absolute;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  height: 100%;
-  width: 100%;
+  background-image: url("../images/facebook.png");
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   background-position: center;
+  background-size: 65%;
 }
 
-.mainTitleGrid:hover {
-  text-decoration: underline;
-}
-
-.mainArticleImageLike {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
-  cursor: grab;
-  height: 20%;
-  width: 20%;
-  opacity: 0.4;
-  z-index: 8000;
-  overflow: hidden;
-  position: absolute;
-  bottom: 2%;
-  left: -5%;
-  margin: auto;
-  background-repeat: no-repeat;
-  -webkit-background-size: 55%;
-  -moz-background-size: 55%;
-  -o-background-size: 55%;
-  background-size: 55%;
-  background-position: right;
-}
-
-.mainArticleImageLike:hover {
-  cursor: grab;
-  opacity: 1;
-}
-
-.mainArticleImageLike:active {
-  cursor: grabbing;
-}
-
-.mainArticleImageBlur {
-  opacity: 0.6;
-  z-index: 0;
-  overflow: hidden;
-  position: absolute;
-  -webkit-transform: scaleX(-1);
-  -webkit-filter: blur(30px);
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  -webkit-background-size: auto;
-  -moz-background-size: auto;
-  -o-background-size: auto;
-  background-size: auto;
-  background-position: center;
-}
-
-.fourArticlesCard {
-  overflow: auto;
-}
-
-.filteredSearchImage {
-  max-height: 10em;
-}
-
-.filteredSearchCard {
-  overflow: auto;
-}
-
-.RAdiv {
-  display: grid;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  top: 0%;
-  left: 0%;
-  left: 0;
-  right: 0;
-  height: 100%;
-  grid-template-columns: 100%;
-  margin-top: 2%;
-  grid-gap: 1%;
-  position: absolute;
-}
-
-.RAcard {
-  position: relative;
-  display: grid;
-  overflow: hidden;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 43% 57%;
-  height: 7.5vw;
-  padding-top: 2%;
-  padding-bottom: 10%;
-  text-overflow: auto;
-}
-
-.RAdescription {
-  overflow: hidden;
-  position: absolute;
-  margin-top: 0;
-  left: 2%;
-  top: 12%;
-  font-size: 1.2vw;
-
-  letter-spacing: 0;
-  line-height: 120%;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-
-.RAimage {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 0;
-  grid-row-end: 4;
-  position: absolute;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-}
-
-.RAImageLike {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
-  cursor: grab;
-  height: 29%;
-  width: 25%;
-  opacity: 0.4;
-  z-index: 9999;
-  bottom: 2%;
-  position: absolute;
-  /* margin-left: auto; */
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 0;
-  grid-row-end: 4;
-  background-repeat: no-repeat;
-  -webkit-background-size: 70%;
-  -moz-background-size: 70%;
-  -o-background-size: 70%;
-  background-size: 70%;
-  background-position: center;
-}
-
-.RAImageLike:hover {
-  cursor: grab;
-  opacity: 1;
-}
-
-.RAImageLike:active {
-  cursor: grabbing;
-}
-
-.RAtitle {
-  overflow: hidden;
-  position: absolute;
-  margin-top: 0;
-  /* vertical-align: center; */
-  left: 2%;
-  right: 2%;
-  top: 0;
-  color: #020e65;
+.linkedin {
   bottom: 0;
-  height: 100%;
-  letter-spacing: 0;
-  font-weight: 700 !important;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-
-.RAtitle:hover {
-  color: #324fe1;
-}
-
-.filteredSearchDiv {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 4;
-  display: grid;
-  top: 5%;
   position: absolute;
-  grid-template-columns: 100%;
-  /* grid-template-rows: auto; */
-  /* grid-auto-rows: auto; */
-  grid-gap: 1vw;
-  position: relative;
-  overflow: auto;
-}
-
-.filteredSearchCard {
-  position: relative;
-  display: grid;
-  overflow: hidden;
-  grid-template-columns: 26% 84%;
-  grid-template-rows: 3vw 1vw 5vw;
-  width: 100%;
+  grid-row: 3 / 4;
   height: 100%;
-
-  /* height: 100%; */
-  /*
-  border-top:1px solid gray; */
-
-  top: 0;
-  bottom: 0;
-}
-
-.filteredSearchDescription {
-  overflow: hidden;
-  position: absolute;
-  margin: 0;
-  left: 2%;
-
-  top: 0;
-  bottom: 23%;
-  font-size: 1.2vw;
-  height: 100%;
-  letter-spacing: 1px;
-  line-height: 120%;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  width: 80%;
-  font-size: 0.9vw;
-  padding-bottom: 4%;
-}
-
-.filteredSearchImage {
-  position: absolute;
-
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 4 !important;
-  top: 0;
-  bottom: 0;
+  width: 10%;
+  left: 54%;
+  background-image: url("../images/linkedin.png");
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   background-position: center;
-  height: 100%;
-  width: 100%;
-}
-
-.filteredSearchTitle {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  overflow: hidden;
-  width: 80%;
-  position: absolute;
-
-  left: 2%;
-  right: 2%;
-  top: 0;
-  padding-top: 0;
-
-  bottom: 0;
-  height: 100%;
-  letter-spacing: 0;
-  font-size: 1vw;
-  font-weight: 700 !important;
+  background-size: 74%;
 }
 
 textarea,

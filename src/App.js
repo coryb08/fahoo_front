@@ -5,19 +5,27 @@ import * as actions from "./actions"
 import { connect } from "react-redux"
 import { store } from "./store.js"
 import { bindActionCreators } from "redux"
-import Body from "./Body"
-// import "../assets/css/bootstrap.min.css";
-// import "../assets/css/jquery.bxslider.css";
-// import "../assets/css/responsive.css";
-// import "../assets/css/style.css";
+import SignInUp from "./containers/SignInUp"
+import Warning from "./containers/Warning"
+import Home from "./components/Home"
 
 export class App extends Component {
   componentDidMount = () => {
     this.props.actions.fetchArticles()
   }
-
   render() {
-    return <Body />
+    if (false) {
+    } else {
+      return (
+        <div>
+          <div className="container">
+            {!this.props.state.offClick.warningStatus ? <Warning /> : <div />}
+            {this.props.state.offClick.offClick ? <SignInUp /> : <div />}
+            <Home />
+          </div>
+        </div>
+      )
+    }
   }
 }
 
@@ -25,4 +33,10 @@ function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
-export default connect(null, mapDispatchToProps)(App)
+function mapStateToProps(state) {
+  return {
+    state
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
