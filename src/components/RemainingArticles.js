@@ -8,16 +8,10 @@ import { connect } from "react-redux"
 const RemainingArticles = props => {
   const handleLike = event => {
     let user1
-    console.log("lakjsdfa ", props)
     let article1 = props.articlesArray[event.target.id]
-
     if (props.state.users.status !== undefined) {
-      user1 = props.state.users
-      props.fetchUser({
-        username: user1.username,
-        password: user1.password
-      })
-      return props.handleLike(article1, user1.id)
+      user1 = props.state.users.id
+      return props.handleLike(article1, user1)
     } else {
       alert("Please log in or sign up to add article to favorites")
     }
