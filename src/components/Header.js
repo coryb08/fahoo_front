@@ -16,9 +16,7 @@ const Header = props => {
         <div
           onClick={handleOnSubmit}
           className="imageLogo"
-          style={{
-            backgroundImage: `url(https://farm5.staticflickr.com/4764/39485392885_10709ac6c1.jpg)`
-          }}
+          
         />
       </div>
       <SearchForm />
