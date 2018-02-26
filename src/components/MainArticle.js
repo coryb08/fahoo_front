@@ -6,7 +6,6 @@ import { connect } from "react-redux"
 // import Logo from "../../images/CNN-logo.jpg";
 
 const MainArticle = props => {
-  console.log("INSIDE MAIN ", props)
   const handleLike = event => {
     let user1
     let article1 = props.article
@@ -31,6 +30,7 @@ const MainArticle = props => {
         <div className="mainDescriptionGrid">{props.article.description}</div>
         <div className="mask">
           <img
+          role="presentation"
             className="mainArticleImageBlur"
             style={{ backgroundImage: `url(${props.article.urlToImage})` }}
           />

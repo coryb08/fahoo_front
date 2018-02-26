@@ -1,12 +1,11 @@
 import React from "react"
 // import uuid from "uuid";
-import { store } from "../store.js"
+
 import * as actions from "../actions"
 import { connect } from "react-redux"
-import { bindActionCreators } from "redux"
+
 
 const UserNav = props => {
-  console.log("nav ", props.user)
 
   const handleOffClick = event => {
     if (!props.user.users.status) {
@@ -17,7 +16,6 @@ const UserNav = props => {
   }
 
   const handleFavorites = event => {
-    console.log("nav ", props.user)
     if (props.user.users.status) {
       props.handleFavorites(props.user.users, true)
     } else {

@@ -7,16 +7,6 @@ import "../App.css"
 // import Logo from "../../images/CNN-logo.jpg";
 
 const FourSubArticles = props => {
-  // let classing
-  // const classings = () => {
-  //   if (props.state.users.status !== undefined) {
-  //     classing = "fourSubImageLike"
-  //     return classing
-  //   } else {
-  //     classing = "fourImageNoUser"
-  //     return classing
-  //   }
-  // }
 
   const handleLike = event => {
     let user1
@@ -46,7 +36,7 @@ const FourSubArticles = props => {
   ))
   return <div className="fourSubArticlesDiv">{fourArticles}</div>
 }
-//
+
 function mapStateToProps(state) {
   return {
     state
@@ -54,17 +44,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, actions)(FourSubArticles)
-
-// const FourSubArticles = props => {
-//   return (
-//     <div className="fourSubArticlesDiv">
-//       {props.articles.map((article, i) => (
-//         <div key={i} className="fourSubArticleCard">
-//           <img src={article.urlToImage} />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-//
-// export default FourSubArticles;

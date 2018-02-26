@@ -1,7 +1,7 @@
 import React from "react"
 import * as actions from "../actions"
 import { connect } from "react-redux"
-import { Component } from "react"
+
 
 const SearchResults = props => {
   const articles = props.articlesArray.map(filteredArticle => (
@@ -18,7 +18,6 @@ const SearchResults = props => {
       </a>
     </div>
   ))
-  console.log(articles, props.articlesArray.length, props.articlesArray[2])
 
   return <div className="filteredSearchDiv">{articles}</div>
 }

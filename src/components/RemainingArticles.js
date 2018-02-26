@@ -18,7 +18,7 @@ const RemainingArticles = props => {
   }
   let artMap = props.articlesArray.map((art, i) => {
     return (
-      <div className="RAcard">
+      <div className="RAcard" key={`RAkey${i}`}>
         <a href={art.url} target="_blank">
           <div
             className="RAimage"
@@ -39,5 +39,3 @@ function mapStateToProps(state) {
   }
 }
 export default connect(mapStateToProps, actions)(RemainingArticles)
-// export default RemainingArticles
-// <div id={i} onClick={handleLike} className="RAImageLike" />

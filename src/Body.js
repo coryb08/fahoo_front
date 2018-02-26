@@ -1,15 +1,11 @@
 import React from "react"
-import SearchForm from "./containers/SearchForm"
 import Articles from "./containers/Articles"
-import MainArticle from "./components/MainArticle"
 import Header from "./components/Header"
 import SignInUp from "./containers/SignInUp"
-import Navbar from "./components/Navbar"
 import * as actions from "./actions"
 import { connect } from "react-redux"
 import SearchResults from "./components/SearchResults"
 import { bindActionCreators } from "redux"
-import RemainingArticles from "./components/RemainingArticles"
 import Favorites from "./containers/Favorites"
 
 // function componentDidMount() {
@@ -20,7 +16,6 @@ import Favorites from "./containers/Favorites"
 // componentDidMount();
 
 const Body = props => {
-  console.log("props in body ", props)
   if (props.state.articles.searchTerm !== "") {
     return (
       <div className="container">

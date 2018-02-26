@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import uuid from "uuid"
 import { connect } from "react-redux"
 import * as actions from "../actions"
 
@@ -43,7 +42,6 @@ export class SignInUp extends Component {
   }
 
   handleOffClick = event => {
-    console.log("event ", event)
     event.preventDefault()
     if (event.target.id === "darkness") {
       return this.props.handleOffClick(false)

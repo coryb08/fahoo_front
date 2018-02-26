@@ -1,15 +1,9 @@
 import React from "react"
 // import uuid from "uuid";
-import { store } from "../store.js"
 import * as actions from "../actions"
 import { connect } from "react-redux"
-import FourSubArticles from "../components/FourSubArticles"
-import MainArticle from "../components/MainArticle"
-import RemainingArticles from "../components/RemainingArticles"
-import WeatherWidget from "../components/WeatherWidget"
 
 const Favorites = props => {
-  console.log("inside favs ", props)
   const handleOOffClick = () => {
     props.handleOffClick(false)
   }
@@ -41,7 +35,6 @@ const Favorites = props => {
 }
 
 function mapStateToProps(state) {
-  console.log("initial", state.articles.payload)
   return {
     state
   }
