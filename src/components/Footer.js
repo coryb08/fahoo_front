@@ -7,7 +7,11 @@ const Footer = () => (
       <br />
       <br />
       Written, developed, and designed by{" "}
-      <a className="footerAtag" target="_blank" href="www.corydbaker.com">
+      <a
+        className="footerAtag"
+        target="_blank"
+        href="http://www.corydbaker.com"
+      >
         Cory Baker
       </a>
     </div>
