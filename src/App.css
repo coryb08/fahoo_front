@@ -1328,12 +1328,14 @@ a:active {
   display: inline-block !important;
   padding: 3%;
   width: 100%;
-  margin: 0;
+
   color: lightgray;
   font-size: 1.3vw;
-  margin-top: 3%;
+  padding-top: 2vw;
+
   margin-left: 20%;
   grid-column: 2 / 4;
+  grid-row: 4 / 5;
   position: absolute;
   text-align: center;
 }
