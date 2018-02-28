@@ -3,7 +3,7 @@ import React from "react"
 const Footer = () => (
   <div className="footer">
     <div className="footerContent">
-      {"https://fahoo.herokuapp.com"}
+      Fahoo
       <br />
       <br />
       Written, developed, and designed by{" "}
