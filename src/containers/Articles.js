@@ -4,7 +4,6 @@ import FourSubArticles from "../components/FourSubArticles"
 import MainArticle from "../components/MainArticle"
 import RemainingArticles from "../components/RemainingArticles"
 
-
 const Articles = props => {
   return (
     <div className="defaultArticlesDiv">
@@ -16,7 +15,7 @@ const Articles = props => {
       />
       <RemainingArticles
         articlesArray={
-          props.articlesArray[1] ? props.articlesArray.slice(5, -1) : []
+          props.articlesArray[1] ? props.articlesArray.slice(5, 19) : []
         }
       />
     </div>

@@ -146,7 +146,7 @@ export function fetchArticles(searchTerm = "") {
           q: searchTerm,
           language: "en",
           sortBy: "relevancy",
-          pageSize: 20
+          pageSize: 40
         })
         .then(responseJson => {
           let validArticles = responseJson.articles
