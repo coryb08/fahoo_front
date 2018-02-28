@@ -49,13 +49,14 @@ a:active {
 }
 
 .container {
+  top: 5.5vw;
   padding-top: 0.3vw;
   /* -ms-grid-columns: 15vw 59vw auto 15vw; */
   -ms-grid-columns: 15vw 59vw auto 15vw;
   grid-template-columns: 15vw 59vw auto 15vw;
   /* -ms-grid-rows: 5vw 40vw auto 5vw; */
-  -ms-grid-rows: 5vw 40vw 193vw 10vw;
-  grid-template-rows: 5vw 40vw 193vw 13vw;
+  -ms-grid-rows: 0.1vw 40vw 193vw 10vw;
+  grid-template-rows: 0.1vw 40vw 193vw 13vw;
   grid-gap: 1vw;
   display: -ms-grid;
   display: grid;
@@ -503,13 +504,76 @@ a:active {
   width: 100%;
 }
 
+.headerStatic {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 15vw 59vw auto 15vw;
+  grid-gap: 1vw;
+  height: 5vw;
+  width: 100%;
+  z-index: 9999;
+  background-color: white;
+  top: 0;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+
+.headerStaticShadow {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 15vw 59vw auto 15vw;
+  grid-gap: 1vw;
+  height: 5vw;
+  width: 100%;
+  z-index: 9999;
+  background-color: white;
+  top: 0;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  animation-name: shadow;
+  animation-duration: 1s;
+  box-shadow: 0px 2px 25px gray;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0px 2px 25px gray;
+  }
+}
+
+.headerStaticOrig {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 15vw 59vw auto 15vw;
+  grid-gap: 1vw;
+  height: 5vw;
+  width: 100%;
+  z-index: 9999;
+  background-color: white;
+  top: 0;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  animation-name: shadowBack;
+  animation-duration: 0.3s;
+}
+
+@keyframes shadowBack {
+  0% {
+    box-shadow: 0px 2px 25px gray;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
 .header {
   position: relative;
   width: 95%;
-  -ms-grid-column: 2;
   grid-column-start: 2;
   grid-column-end: 4;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   /* autoprefixer: off */
   grid-row-end: 2;
@@ -1151,7 +1215,7 @@ a:active {
   height: 29%;
   width: 25%;
   opacity: 0.4;
-  z-index: 9999;
+  z-index: 9998;
   bottom: 2%;
   position: absolute;
   /* margin-left: auto; */
