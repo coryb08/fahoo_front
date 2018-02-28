@@ -7,7 +7,6 @@ import "../App.css"
 // import Logo from "../../images/CNN-logo.jpg";
 
 const FourSubArticles = props => {
-
   const handleLike = event => {
     let user1
 
@@ -22,7 +21,6 @@ const FourSubArticles = props => {
 
   const fourArticles = props.articles.map((arti, i) => (
     <div className={`fourArticlesCard${i}`} key={arti.url}>
-      <div id={i} onClick={handleLike} className={`fourSubImageLike${i}`} />
       <a href={arti.url} target="_blank">
         <div
           style={{ backgroundImage: `url(${arti.urlToImage})` }}
@@ -31,7 +29,7 @@ const FourSubArticles = props => {
 
         <h4 className="fourSubTitle">{arti.title}</h4>
       </a>
-      <div id={i} onClick={handleLike} className="fourSubImageLike" />
+      <div id={i} onClick={handleLike} className={`fourSubImageLike${i}`} />
     </div>
   ))
   return <div className="fourSubArticlesDiv">{fourArticles}</div>

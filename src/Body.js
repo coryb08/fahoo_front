@@ -7,6 +7,7 @@ import { connect } from "react-redux"
 import SearchResults from "./components/SearchResults"
 import { bindActionCreators } from "redux"
 import Favorites from "./containers/Favorites"
+import Footer from "./components/Footer"
 
 // function componentDidMount() {
 //   console.log("app mounted");
@@ -23,6 +24,7 @@ const Body = props => {
         <Header />
         {props.state.favorites.status ? <Favorites /> : <div />}
         <SearchResults />
+        <Footer />
       </div>
     )
   } else {
@@ -34,6 +36,7 @@ const Body = props => {
           {props.state.offClick.offClick ? <SignInUp /> : <div />}
           <Header />
           <Articles />
+          <Footer />
         </div>
       </div>
     )

@@ -4,9 +4,7 @@ import React from "react"
 import * as actions from "../actions"
 import { connect } from "react-redux"
 
-
 const UserNav = props => {
-
   const handleOffClick = event => {
     if (!props.user.users.status) {
       return props.handleOffClick(true)
@@ -31,6 +29,10 @@ const UserNav = props => {
     }
   }
 
+  const handleProfile = event => {
+    alert("User profiles are in the works")
+  }
+
   return (
     <div className="dropdown">
       <button onClick={handleOffClick} className="dropbtn">
@@ -39,7 +41,9 @@ const UserNav = props => {
           : "Log in / Sign up"}
       </button>
       <div className="dropdown-content">
-        <a href="#">Profile</a>
+        <a onClick={handleProfile} href="#">
+          Profile
+        </a>
         <a onClick={handleFavorites} href="#">
           Favorites
         </a>
