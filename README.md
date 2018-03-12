@@ -1,11 +1,11 @@
-![alt text](./images/fahoo.png)
+![alt text](./images/fahoo2.png)
 
 This app was developed, written, and designed solely by me, Cory Baker, for the purposes of:
 
-- Demonstrating custom CSS design
-- Demonstrating user-auth sign in flow
-- Illustrating the use of React components and Redux store
-- Illustrating how unique users and their unique articles can be organized with a Rails API
+* Demonstrating custom CSS design
+* Demonstrating user-auth sign in flow
+* Illustrating the use of React components and Redux store
+* Illustrating how unique users and their unique articles can be organized with a Rails API
 
 No boiler plates were used.
 
