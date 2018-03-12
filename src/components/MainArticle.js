@@ -30,7 +30,7 @@ const MainArticle = props => {
         <div className="mainDescriptionGrid">{props.article.description}</div>
         <div className="mask">
           <img
-          role="presentation"
+            role="presentation"
             className="mainArticleImageBlur"
             style={{ backgroundImage: `url(${props.article.urlToImage})` }}
           />

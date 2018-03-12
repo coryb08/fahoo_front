@@ -28,16 +28,20 @@ export function handleFavorites(user, bool = false) {
 
 export function handleLike(props, user) {
   return function(dispatch) {
-    fetch(`https://fahooback.herokuapp.com/articles`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        url: props.url,
-        urlToImage: props.urlToImage,
-        title: props.title,
-        user_id: user
-      })
-    })
+    fetch(
+      `https://fahooback.herokuapp.com/articles`,
+
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          url: props.url,
+          urlToImage: props.urlToImage,
+          title: props.title,
+          user_id: user
+        })
+      }
+    )
       .then(res => res.json())
       .then(json => {
         return dispatch({
