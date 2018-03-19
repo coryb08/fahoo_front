@@ -2,9 +2,6 @@ import React from "react"
 import * as actions from "../actions"
 import { connect } from "react-redux"
 
-// import SearchForm from "../containers/SearchForm";
-// import Logo from "../../images/CNN-logo.jpg";
-
 const MainArticle = props => {
   const handleLike = event => {
     let user1

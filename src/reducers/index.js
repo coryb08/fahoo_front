@@ -5,6 +5,7 @@ const defaultState = {
   searchTerm: "",
   bool: false
 }
+
 const articles = (state = defaultState, action) => {
   switch (action.type) {
     case "ARTICLES":
@@ -35,7 +36,7 @@ const favorites = (state, action) => {
 
 const offClick = (state, action) => {
   switch (action.type) {
-    case "offClick":
+    case "OFFCLICK":
       return {
         ...state,
         offClick: action.offClick
@@ -71,22 +72,3 @@ const users = (state, action) => {
 }
 
 export default combineReducers({ articles, offClick, users, favorites })
-
-
-This would be much cleaner imo:
-
-export class ButcherShop extends React.component{
-  render() {
-return(<div class="butcher-shop">
-<div>
-  <p>'Hello! We have the following products for sale today'</p>
-  <ul>
-  <li>'Tenderloin'</li>
-  <li>'Short ribs'</li>
-  <li>'Beef shin'</li>
-  <li>'Ribeye'</li>
-  </ul>
-  </div>
-</div>)
-  }
-}

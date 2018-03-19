@@ -5,12 +5,10 @@ var checkImage = require("image-check")
 
 export function handleOffClick(bool) {
   return {
-    type: "offClick",
+    type: "OFFCLICK",
     offClick: bool
   }
 }
-
-// ----------------------------------------------
 
 export function handleFavorites(user, bool = false) {
   return function(dispatch) {

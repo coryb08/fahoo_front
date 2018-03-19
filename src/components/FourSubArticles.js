@@ -3,9 +3,6 @@ import * as actions from "../actions"
 import { connect } from "react-redux"
 import "../App.css"
 
-// import SearchForm from "../containers/SearchForm";
-// import Logo from "../../images/CNN-logo.jpg";
-
 const FourSubArticles = props => {
   const handleLike = event => {
     let user1

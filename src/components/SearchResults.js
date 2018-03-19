@@ -2,7 +2,6 @@ import React from "react"
 import * as actions from "../actions"
 import { connect } from "react-redux"
 
-
 const SearchResults = props => {
   const articles = props.articlesArray.map(filteredArticle => (
     <div className="filteredSearchCard" key={filteredArticle.url}>

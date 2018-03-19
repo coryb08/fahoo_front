@@ -1,13 +1,13 @@
 import React from "react"
 import Articles from "./containers/Articles"
 import Header from "./components/Header"
-import SignInUp from "./containers/SignInUp"
+import SignInUp from "./components/SignInUp"
 import * as actions from "./actions"
 import { connect } from "react-redux"
 import SearchResults from "./components/SearchResults"
 import { bindActionCreators } from "redux"
 import Favorites from "./containers/Favorites"
-import Footer from "./components/Footer"
+import Footer from "./containers/Footer"
 
 // function componentDidMount() {
 //   console.log("app mounted");

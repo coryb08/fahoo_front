@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import SearchForm from "../containers/SearchForm"
+import SearchForm from "../components/SearchForm"
 import * as actions from "../actions"
 import { connect } from "react-redux"
-import UserNav from "../containers/UserNav"
+import UserNav from "../components/UserNav"
 
 export class Header extends Component {
   constructor(props) {
