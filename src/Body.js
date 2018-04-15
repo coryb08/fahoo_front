@@ -1,6 +1,6 @@
 import React from "react"
 import Articles from "./containers/Articles"
-import Header from "./components/Header"
+import Header from "./containers/Header"
 import SignInUp from "./components/SignInUp"
 import * as actions from "./actions"
 import { connect } from "react-redux"
