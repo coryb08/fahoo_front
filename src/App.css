@@ -320,7 +320,7 @@ a:active {
 }
 
 .outerFavoritesDiv {
-  position: fixed;
+  position: absolute;
   z-index: 9999;
   left: 0;
   top: 0;
