@@ -1,23 +1,16 @@
-import React from "react"
-import Articles from "./containers/Articles"
-import Header from "./containers/Header"
-import SignInUp from "./components/SignInUp"
-import * as actions from "./actions"
-import { connect } from "react-redux"
-import SearchResults from "./components/SearchResults"
-import { bindActionCreators } from "redux"
-import Favorites from "./containers/Favorites"
-import Footer from "./containers/Footer"
-
-// function componentDidMount() {
-//   console.log("app mounted");
-//   this.props.actions.fetchArticles();
-// }
-//
-// componentDidMount();
+import React from 'react'
+import Articles from './containers/Articles'
+import Header from './containers/Header'
+import SignInUp from './components/SignInUp'
+import * as actions from './actions'
+import { connect } from 'react-redux'
+import SearchResults from './components/SearchResults'
+import { bindActionCreators } from 'redux'
+import Favorites from './containers/Favorites'
+import Footer from './containers/Footer'
 
 const Body = props => {
-  if (props.state.articles.searchTerm !== "") {
+  if (props.state.articles.searchTerm !== '') {
     return (
       <div className="container">
         {props.state.offClick.offClick ? <SignInUp /> : <div />}

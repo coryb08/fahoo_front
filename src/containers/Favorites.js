@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 // import uuid from "uuid";
-import * as actions from "../actions"
-import { connect } from "react-redux"
+import * as actions from '../actions'
+import { connect } from 'react-redux'
 
 const Favorites = props => {
   const handleOOffClick = () => {
@@ -9,8 +9,9 @@ const Favorites = props => {
   }
 
   let artMap = props.state.favorites.articles.map(art => {
+    console.log(art)
     return (
-      <div className="FavCard">
+      <div key={Math.random() * Math.random()} className="FavCard">
         <a href={art.url} target="_blank">
           <div
             className="FavImage"

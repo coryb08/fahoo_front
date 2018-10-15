@@ -1,16 +1,16 @@
-import React from "react"
-import * as actions from "../actions"
-import { connect } from "react-redux"
+import React from 'react'
+import * as actions from '../actions'
+import { connect } from 'react-redux'
 
 const MainArticle = props => {
   const handleLike = event => {
-    let user1
-    let article1 = props.article
+    let user
+    let article = props.article
     if (props.state.users.status !== undefined) {
-      user1 = props.state.users.id
-      return props.handleLike(article1, user1)
+      user = props.state.users.id
+      return props.handleLike(article, user)
     } else {
-      alert("Please log in or sign up to add article to favorites")
+      alert('Please log in or sign up to add article to favorites')
     }
   }
 

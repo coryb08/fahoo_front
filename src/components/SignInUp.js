@@ -1,23 +1,23 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import * as actions from "../actions"
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import * as actions from '../actions'
 
 export class SignInUp extends Component {
   constructor(props) {
     super()
     this.state = {
-      username: "",
-      password: ""
+      email: '',
+      password: ''
     }
   }
   handleInSubmit = event => {
     event.preventDefault()
     event.stopPropagation()
-    if (this.state.username === "" || this.state.password === "") {
+    if (this.state.email === '' || this.state.password === '') {
       return
     } else {
-      return this.props.fetchUser(this.state)
-      // username: event.target[0].value,
+      return this.props.signIn(this.state)
+      // email: event.target[0].value,
       // password: event.target[1].value
       // })
     }
@@ -27,14 +27,14 @@ export class SignInUp extends Component {
     event.preventDefault()
     event.stopPropagation()
     if (
-      event.target[0].value === "" ||
-      event.target[1].value === "" ||
-      event.target[2].value === ""
+      event.target[0].value === '' ||
+      event.target[1].value === '' ||
+      event.target[2].value === ''
     ) {
       return
     } else {
       return this.props.createUser({
-        username: event.target[0].value,
+        email: event.target[0].value,
         password: event.target[1].value,
         passwordMatch: event.target[2].value
       })
@@ -43,7 +43,7 @@ export class SignInUp extends Component {
 
   handleOffClick = event => {
     event.preventDefault()
-    if (event.target.id === "darkness") {
+    if (event.target.id === 'darkness') {
       return this.props.handleOffClick(false)
     } else {
       return
@@ -72,9 +72,9 @@ export class SignInUp extends Component {
               <label className="signInLabel">Sign In</label>
               <input
                 onChange={this.updateForm}
-                name="username"
-                placeholder="username"
-                className="signInUsername"
+                name="email"
+                placeholder="email"
+                className="signInemail"
                 type="text"
               />
               <input
@@ -96,9 +96,9 @@ export class SignInUp extends Component {
             <form onSubmit={this.handleUpSubmit} className="signUpForm">
               <label className="signUpLabel">Sign Up</label>
               <input
-                name="username"
-                placeholder="username"
-                className="signUpUsername"
+                name="email"
+                placeholder="email"
+                className="signUpemail"
                 type="text"
               />
               <input

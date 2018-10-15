@@ -37,7 +37,7 @@ const UserNav = props => {
     <div className="dropdown">
       <button onClick={handleOffClick} className="dropbtn">
         {props.user.users.status
-          ? props.user.users.username
+          ? props.user.users.email
           : "Log in / Sign up"}
       </button>
       <div className="dropdown-content">

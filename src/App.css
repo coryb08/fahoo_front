@@ -1,5 +1,5 @@
 * {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   word-wrap: break-word;
   -o-text-overflow: ellipsis;
@@ -143,7 +143,7 @@ a:active {
   grid-row-start: 1;
 }
 
-.signInUsername {
+.signInemail {
   letter-spacing: 1px;
   font-size: 1vw;
   outline: none;
@@ -228,7 +228,7 @@ a:active {
   grid-row-start: 1;
 }
 
-.signUpUsername {
+.signUpemail {
   letter-spacing: 1px;
   font-size: 1vw;
   outline: none;
@@ -424,7 +424,7 @@ a:active {
   white-space: nowrap;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  content: "";
+  content: '';
   height: 80%;
   width: 90%;
   border-radius: 4%;
@@ -498,15 +498,14 @@ a:active {
 }
 
 .imageLogo {
-  background-image: url("../images/fahoo2.png");
-  -ms-grid-column: 1;
+  background-image: url('./images/Fahoo2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   grid-column-start: 1;
   grid-column-end: 2;
   cursor: pointer;
   padding-top: 4%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   height: 100%;
   width: 100%;
 }
@@ -698,7 +697,7 @@ a:active {
 
 .searchSubmit {
   top: 0;
-  background-image: url("../images/Screen.png");
+  background-image: url('./images/Screen3.png');
   background-position: center;
   background-color: #0064fe;
   background-repeat: no-repeat;
@@ -841,7 +840,7 @@ a:active {
 }
 
 .fourSubImageLike0 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png');
   cursor: -webkit-grab;
   cursor: grab;
   opacity: 0.4;
@@ -864,7 +863,7 @@ a:active {
 }
 
 .fourSubImageLike1 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png');
   cursor: -webkit-grab;
   cursor: grab;
   opacity: 0.4;
@@ -887,7 +886,7 @@ a:active {
 }
 
 .fourSubImageLike2 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png');
   cursor: -webkit-grab;
   cursor: grab;
   opacity: 0.4;
@@ -910,7 +909,7 @@ a:active {
 }
 
 .fourSubImageLike3 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png');
   cursor: -webkit-grab;
   cursor: grab;
   opacity: 0.4;
@@ -1108,7 +1107,7 @@ a:active {
 }
 
 .mainArticleImageLike {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png');
   cursor: -webkit-grab;
   cursor: grab;
   height: 20%;
@@ -1243,7 +1242,7 @@ a:active {
 }
 
 .RAImageLike {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png");
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png');
   cursor: -webkit-grab;
   cursor: grab;
   height: 29%;
@@ -1446,19 +1445,19 @@ a:active {
 
 textarea,
 select,
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"] {
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'] {
   -webkit-box-sizing: border-box;
 
   box-sizing: border-box;
